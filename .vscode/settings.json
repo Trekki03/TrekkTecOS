@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stm32l452re.h": "c",
+        "nucleduino.h": "c",
+        "flash.h": "c",
+        "gpio.h": "c",
+        "power.h": "c",
+        "rcc.h": "c"
+    }
+}
