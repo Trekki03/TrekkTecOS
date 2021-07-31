@@ -23,4 +23,5 @@ void SetPLLN(plln_divider_value_t value);
 void SetPLLR(pllr_divider_value_t value);
 
 void TogglePowerInterfaceClock(bool onOff);
+void ToggleGpioClock(gpio_enable_port_t port, bool onOff);
 #endif /* RCC_H */

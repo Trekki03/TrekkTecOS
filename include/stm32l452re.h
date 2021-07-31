@@ -4,6 +4,7 @@
 #include "stdint.h"
 
 // RCC Type Defs
+
 typedef enum
 {
     SYSCLOCK_MSI_SOURCE     = 0,
@@ -154,6 +155,16 @@ typedef enum
     PLLR_DIVIDER_8  = 0b11
 } pllr_divider_value_t;
 
+typedef enum
+{
+    GPIO_A_ENABLE_PORT = 0,
+    GPIO_B_ENABLE_PORT = 1,
+    GPIO_C_ENABLE_PORT = 2,
+    GPIO_D_ENABLE_PORT = 3,
+    GPIO_E_ENABLE_PORT = 4,
+    GPIO_H_ENABLE_PORT = 7,
+} gpio_enable_port_t;
+
 // Power Typedefs
 typedef enum
 {
@@ -170,6 +181,30 @@ typedef enum
     FLASH_LATENCY_3_WAIT_STATES = 0b011,
     FLASH_LATENCY_4_WAIT_STATES = 0b100,
 } flash_latency_value_t;
+
+//GPIO Typedefs
+typedef enum
+{
+    GPIO_INPUT_MODE              = 0,
+    GPIO_OUTPUT_MODE             = 1,
+    GPIO_ALTERNATE_FUNCTION_MODE = 2,
+    GPIO_ANALOG_MODE             = 3
+} gpio_pin_mode_t;
+
+typedef enum
+{
+    GPIO_LOW_SPEED       = 0,
+    GPIO_MEDIUM_SPEED    = 1,
+    GPIO_HIGH_SPEED      = 2,
+    GPIO_VERY_HIGH_SPEED = 3
+} gpio_pin_speed_t;
+
+typedef enum
+{
+    NO_PULLUP_NO_PULLDOWN   = 0,
+    PULLUP                  = 1,
+    PULLDOWN                = 2
+} gpio_pullup_pulldown_t;
 
 // Register Structs
 typedef struct
@@ -277,6 +312,15 @@ typedef struct
     volatile uint32_t WRP1BR;   
 } flash_struct_t;
 
+typedef struct 
+{
+    volatile uint32_t CTRL;
+    volatile uint32_t LOAD;
+    volatile uint32_t VAL;
+    volatile uint32_t CALIB;
+} systick_struct_t;
+
+
 extern rcc_struct_t*   RCC;    
 extern gpio_struct_t*  GPIOA;  
 extern gpio_struct_t*  GPIOB;
@@ -286,5 +330,6 @@ extern gpio_struct_t*  GPIOE;
 extern gpio_struct_t*  GPIOH; 
 extern pwr_struct_t*   PWR;    
 extern flash_struct_t* FLASH;  
+extern systick_struct_t* STK;
 
 #endif /* STM32L452RE_H */

@@ -75,3 +75,8 @@ void TogglePowerInterfaceClock(bool onOff)
 {
     WriteIntoRegister(&(RCC->APB1ENR1), onOff, 1, 28);
 }
+
+void ToggleGpioClock(gpio_enable_port_t port, bool onOff)
+{
+    WriteIntoRegister(&(RCC->AHB2ENR), onOff, 1, port);
+}
