@@ -145,7 +145,7 @@ typedef enum
     PLLN_DIVIDER_84  = 84,
     PLLN_DIVIDER_85  = 85,
     PLLN_DIVIDER_86  = 86
-} plln_divider_value_t;
+} plln_multiplier_value_t;
 
 typedef enum
 {

@@ -61,7 +61,7 @@ void SetPLLM(pllm_divider_value_t value)
     WriteIntoRegister(&(RCC->PLLCFGR), value, 3, 4);
 }
 
-void SetPLLN(plln_divider_value_t value)
+void SetPLLN(plln_multiplier_value_t value)
 {
     WriteIntoRegister(&(RCC->PLLCFGR), value, 7, 8);
 }
