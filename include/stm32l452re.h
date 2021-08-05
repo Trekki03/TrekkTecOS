@@ -7,49 +7,49 @@
 
 typedef enum
 {
-    SYSCLOCK_MSI_SOURCE     = 0,
-    SYSCLOCK_HSI16_SOURCE   = 1,
-    SYSCLOCK_HSE_SOURCE     = 2,
-    SYSCLOCK_PLL_SOURCE     = 3
+    SYSCLOCK_MSI_SOURCE     = 0,  //< MSI as sysclock source
+    SYSCLOCK_HSI16_SOURCE   = 1,  //< 16MHz HSI as sysclock source
+    SYSCLOCK_HSE_SOURCE     = 2,  //< HSE as sysclock source
+    SYSCLOCK_PLL_SOURCE     = 3   //< main PLL as sysclock source
 } system_clock_source_t;
 
 typedef enum
 {
-    AHB_NOT_DIVIDED     = 0b0000,
-    AHB_DIVIDED_BY_2    = 0b1000,
-    AHB_DIVIDED_BY_4    = 0b1001,
-    AHB_DIVIDED_BY_8    = 0b1010,
-    AHB_DIVIDED_BY_16   = 0b1011,
-    AHB_DIVIDED_BY_64   = 0b1100,
-    AHB_DIVIDED_BY_128  = 0b1101,
-    AHB_DIVIDED_BY_256  = 0b1110,
-    AHB_DIVIDED_BY_512  = 0b1111
+    AHB_NOT_DIVIDED     = 0b0000, //< AHB dividition value 1 (no dividiton)
+    AHB_DIVIDED_BY_2    = 0b1000, //< AHB dividition value 2
+    AHB_DIVIDED_BY_4    = 0b1001, //< AHB dividition value 4
+    AHB_DIVIDED_BY_8    = 0b1010, //< AHB dividition value 8
+    AHB_DIVIDED_BY_16   = 0b1011, //< AHB dividition value 16
+    AHB_DIVIDED_BY_64   = 0b1100, //< AHB dividition value 64
+    AHB_DIVIDED_BY_128  = 0b1101, //< AHB dividition value 128
+    AHB_DIVIDED_BY_256  = 0b1110, //< AHB dividition value 256
+    AHB_DIVIDED_BY_512  = 0b1111  //< AHB dividition value 512
 } ahb_prescaler_values_t;
 
 typedef enum
 {
-    APB1_NOT_DIVIDED    = 0b000,
-    APB1_DIVIDED_BY_2   = 0b100,
-    APB1_DIVIDED_BY_4   = 0b101,   
-    APB1_DIVIDED_BY_8   = 0b110,
-    APB1_DIVIDED_BY_16  = 0b111
+    APB1_NOT_DIVIDED    = 0b000,  //< APB1 dividition value 1 (no dividiton) 
+    APB1_DIVIDED_BY_2   = 0b100,  //< APB1 dividition value 2
+    APB1_DIVIDED_BY_4   = 0b101,  //< APB1 dividition value 4
+    APB1_DIVIDED_BY_8   = 0b110,  //< APB1 dividition value 8
+    APB1_DIVIDED_BY_16  = 0b111   //< APB1 dividition value 16
 } apb1_prescaler_value_t;
 
 typedef enum
 {
-    APB2_NOT_DIVIDED    = 0b000,
-    APB2_DIVIDED_BY_2   = 0b100,
-    APB2_DIVIDED_BY_4   = 0b101,   
-    APB2_DIVIDED_BY_8   = 0b110,
-    APB2_DIVIDED_BY_16  = 0b111
+    APB2_NOT_DIVIDED    = 0b000,  //< APB2 dividition value 1 (no dividiton)
+    APB2_DIVIDED_BY_2   = 0b100,  //< APB2 dividition value 2
+    APB2_DIVIDED_BY_4   = 0b101,  //< APB2 dividition value 4 
+    APB2_DIVIDED_BY_8   = 0b110,  //< APB2 dividition value 8
+    APB2_DIVIDED_BY_16  = 0b111   //< APB2 dividition value 16
 } apb2_prescaler_value_t;
 
 typedef enum
 {
-    PLL_SOURCE_NO_SOURCE    = 0b00,
-    PLL_SOURCE_MSI          = 0b01,
-    PLL_SOURCE_HSI16        = 0b10,
-    PLL_SOURCE_HSE          = 0b11
+    PLL_SOURCE_NO_SOURCE    = 0b00,  //< no source for main PLL
+    PLL_SOURCE_MSI          = 0b01,  //< MSI as source for main PLL
+    PLL_SOURCE_HSI16        = 0b10,  //< 16MHz HSI as source for main PLL
+    PLL_SOURCE_HSE          = 0b11   //< HSE as source for main PLL
 } pll_source_t;
 
 typedef enum 
