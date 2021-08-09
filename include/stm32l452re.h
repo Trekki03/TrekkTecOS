@@ -1,4 +1,14 @@
-//TODO: File Header
+/**
+ * @file stm32l452re.h
+ * @author Trekki03 (trekki03_yt@yahoo.com)
+ * @brief File contains all the registers and typedef enums etc. for stm32l452re
+ * @version 0.1
+ * @date 2021-07-31
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 //TODO: Kommentare und enum zuweisungen auf eine ebene setzen
 #ifndef STM32L452RE_H	
 #define STM32L452RE_H
@@ -255,83 +265,83 @@ typedef struct
 
 typedef struct
 {
-    volatile uint32_t MODER; 
-    volatile uint32_t OTYPER;
-    volatile uint32_t OSPEEDR;
-    volatile uint32_t PUPDR; 
-    volatile uint32_t IDR;   
-    volatile uint32_t ODR;   
-    volatile uint32_t BSRR;  
-    volatile uint32_t LCKR;  
-    volatile uint32_t AFRL;
-    volatile uint32_t AFRH;
-    volatile uint32_t BRR;   
+    volatile uint32_t MODER; ///< GPIO port mode register
+    volatile uint32_t OTYPER; ///< GPIO port output type register
+    volatile uint32_t OSPEEDR; ///< GPIO port output speed register
+    volatile uint32_t PUPDR; ///< GPIO port pull-up/pull-down register
+    volatile uint32_t IDR; ///< GPIO port input data register
+    volatile uint32_t ODR; ///< GPIO port output data register
+    volatile uint32_t BSRR; ///< GPIO port bit set/reset register
+    volatile uint32_t LCKR; ///< GPIO port configuration lock register
+    volatile uint32_t AFRL; ///< GPIO port alternate function low register
+    volatile uint32_t AFRH; ///< GPIO port alternate function high register
+    volatile uint32_t BRR; ///< GPIO port bit reset register
 
 } gpio_struct_t;
 
 typedef struct
 {
-    volatile uint32_t CR1;   
-    volatile uint32_t CR2;   
-    volatile uint32_t CR3;   
-    volatile uint32_t CR4;   
-    volatile uint32_t SR1;   
-    volatile uint32_t SR2;   
-    volatile uint32_t SCR;   
+    volatile uint32_t CR1; ///< Power control register 1    
+    volatile uint32_t CR2; ///< Power controk register 2
+    volatile uint32_t CR3; ///< Power controk register 3   
+    volatile uint32_t CR4; ///< Power controk register 4   
+    volatile uint32_t SR1; ///< Power status register 1
+    volatile uint32_t SR2; ///< Power status register 2   
+    volatile uint32_t SCR; ///< Power status clear register   
              uint32_t PWR_OFFSET_DONT_USE_0; 
-    volatile uint32_t PUCRA;
-    volatile uint32_t PDCRA;
-    volatile uint32_t PUCRB;
-    volatile uint32_t PDCRB;
-    volatile uint32_t PUCRC;
-    volatile uint32_t PDCRC;
-    volatile uint32_t PUCRD;
-    volatile uint32_t PDCRD;
-    volatile uint32_t PUCRE;
-    volatile uint32_t PDCRE;
+    volatile uint32_t PUCRA; ///< Power Port A pull-up control register
+    volatile uint32_t PDCRA; ///< Power Port A pull-down control register
+    volatile uint32_t PUCRB; ///< Power Port B pull-up control register
+    volatile uint32_t PDCRB; ///< Power Port B pull-down control register
+    volatile uint32_t PUCRC; ///< Power Port C pull-up control register
+    volatile uint32_t PDCRC; ///< Power Port C pull-down control register
+    volatile uint32_t PUCRD; ///< Power Port D pull-up control register
+    volatile uint32_t PDCRD; ///< Power Port D pull-down control register
+    volatile uint32_t PUCRE; ///< Power Port E pull-up control register
+    volatile uint32_t PDCRE; ///< Power Port E pull-down control register
              uint32_t PWR_OFFSET_DONT_USE_1;
              uint32_t PWR_OFFSET_DONT_USE_2;
              uint32_t PWR_OFFSET_DONT_USE_3;
              uint32_t PWR_OFFSET_DONT_USE_4;
-    volatile uint32_t PUCRH;
-    volatile uint32_t PDCRH;
+    volatile uint32_t PUCRH; ///< Power Port H pull-up control register
+    volatile uint32_t PDCRH; ///< Power Port H pull-down control register
 } pwr_struct_t;
 
 typedef struct
 {
-    volatile uint32_t ACR;      
-    volatile uint32_t PDKEYR;   
-    volatile uint32_t KEYR;     
-    volatile uint32_t OPTKEYR;  
-    volatile uint32_t SR;       
-    volatile uint32_t CR;       
-    volatile uint32_t ECCR;     
-    volatile uint32_t RESERVED1;
-    volatile uint32_t OPTR;     
-    volatile uint32_t PCROP1SR; 
-    volatile uint32_t PCROP1ER; 
-    volatile uint32_t WRP1AR;   
-    volatile uint32_t WRP1BR;   
+    volatile uint32_t ACR; ///< Flash access conrol register      
+    volatile uint32_t PDKEYR; ///< Flash Power-down key register  
+    volatile uint32_t KEYR; ///< Flash key register    
+    volatile uint32_t OPTKEYR; ///< Flash option key register
+    volatile uint32_t SR; ///< Flash status register
+    volatile uint32_t CR; ///< Flash control register
+    volatile uint32_t ECCR; ///< Flash ECC register
+    volatile uint32_t FLASH_OFFSET_DONT_USE_1;
+    volatile uint32_t OPTR; ///< Flash option register
+    volatile uint32_t PCROP1SR; ///< Flash PCROP Start address register
+    volatile uint32_t PCROP1ER; ///< Flash PCROÜ End address register
+    volatile uint32_t WRP1AR; ///< Flash WRP area A address register
+    volatile uint32_t WRP1BR; ///< Flash WRP area B address register
 } flash_struct_t;
 
 typedef struct 
 {
-    volatile uint32_t CTRL;
-    volatile uint32_t LOAD;
-    volatile uint32_t VAL;
-    volatile uint32_t CALIB;
+    volatile uint32_t CTRL; ///< SysTick control and status register
+    volatile uint32_t LOAD; ///< SysTick reload value register
+    volatile uint32_t VAL; ///< SysTick current value register
+    volatile uint32_t CALIB; ///< SysTick calibration value register
 } systick_struct_t;
 
 
-extern rcc_struct_t*   RCC;    
-extern gpio_struct_t*  GPIOA;  
-extern gpio_struct_t*  GPIOB;
-extern gpio_struct_t*  GPIOC;  
-extern gpio_struct_t*  GPIOD;  
-extern gpio_struct_t*  GPIOE;  
-extern gpio_struct_t*  GPIOH; 
-extern pwr_struct_t*   PWR;    
-extern flash_struct_t* FLASH;  
-extern systick_struct_t* STK;
+extern rcc_struct_t*   RCC; ///< RCC base address struct   
+extern gpio_struct_t*  GPIOA; ///< GPIOA base address struct 
+extern gpio_struct_t*  GPIOB; ///< GPIOB base address struct
+extern gpio_struct_t*  GPIOC;   ///< GPIOC base address struct
+extern gpio_struct_t*  GPIOD;   ///< GPIOD base address struct
+extern gpio_struct_t*  GPIOE;   ///< GPIOE base address struct
+extern gpio_struct_t*  GPIOH;  ///< GPIOH base address struct
+extern pwr_struct_t*   PWR;     ///< PWR base address struct
+extern flash_struct_t* FLASH;   ///< FLASH base address struct
+extern systick_struct_t* STK; ///< SysTick base address struct
 
 #endif /* STM32L452RE_H */
