@@ -4,73 +4,94 @@
 #define SRAM_SIZE  (160 * 1024)
 #define SRAM_END (SRAM_START + SRAM_SIZE)
 
+int main(void);
+
 // "system interrupts"
 void Reset_Handler(void);
-void NMI_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void HardFault_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void MemManage_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void BusFault_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void UsageFault_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void SVCall_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void Debug_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void PendSV_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void SysTick_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-// "normal interrupts"
-void WWDG_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void PVD_PVM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void RTC_TAMP_STAMP_CSS_LSE_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void RTC_WKUP_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void FLASH_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void RCC_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ETXI0_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ETXI1_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ETXI2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ETXI3_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ETXI4_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH1_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH3_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH4_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH5_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH6_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA1_CH7_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void ADC1_2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void CAN1_TX_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void CAN1_RX0_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void CAN1_RX1_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void CAN1_SCE_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void EXTI9_5_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM1_BRK_TIM15_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM1_UP_TIM16_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM1_TRG_COM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM1_CC_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM3_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void I2C1_EV_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void I2C1_ER_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void I2C2_EV_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void I2C2_ER_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void SPI1_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void SPI2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void USART1_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void USART2_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void USART3_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void EXTI15_10_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void RTC_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
+void NMI_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void HardFault_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void MemManage_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void BusFault_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void UsageFault_Handler(void)				__attribute__ ((weak, alias ("Common_Handler")));
+void SVCall_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void Debug_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void PendSV_Handler(void)					__attribute__ ((weak, alias ("Common_Handler")));
+void SysTick_Handler(void)					__attribute__ ((weak, alias ("Common_Handler")));
 
-void SDMMC1_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void SPI3_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void UART4_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM6_DACUNDER_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void TIM7_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA2_CH1_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA2_CH2_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA2_CH3_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA2_CH4_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DMA2_CH5_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DFSDM1_FLT0_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void DFSDM1_FTL1_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
-void RTC_ALARM_Handler(void) __attribute__ ((weak, alias ("Common_Handler")));
+// "normal interrupts"
+void WWDG_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void PVD_PVM_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void RTC_TAMP_STAMP_CSS_LSE_Handler(void) 	__attribute__ ((weak, alias ("Common_Handler")));
+void RTC_WKUP_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void FLASH_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void RCC_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void ETXI0_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void ETXI1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void ETXI2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void ETXI3_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void ETXI4_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH1_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH2_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH3_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH4_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH5_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH6_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA1_CH7_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void ADC1_2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void CAN1_TX_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void CAN1_RX0_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void CAN1_RX1_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void CAN1_SCE_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void EXTI9_5_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void TIM1_BRK_TIM15_Handler(void) 			__attribute__ ((weak, alias ("Common_Handler")));
+void TIM1_UP_TIM16_Handler(void) 			__attribute__ ((weak, alias ("Common_Handler")));
+void TIM1_TRG_COM_Handler(void) 			__attribute__ ((weak, alias ("Common_Handler")));
+void TIM1_CC_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void TIM2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void TIM3_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C1_EV_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C1_ER_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C2_EV_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C2_ER_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void SPI1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void SPI2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void USART1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void USART2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void USART3_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void EXTI15_10_Handler(void)				__attribute__ ((weak, alias ("Common_Handler")));
+void RTC_ALARM_Handler(void)				__attribute__ ((weak, alias ("Common_Handler")));
+void SDMMC1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void SPI3_Handler(void)	 					__attribute__ ((weak, alias ("Common_Handler")));
+void UART4_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void TIM6_DACUNDER_Handler(void) 			__attribute__ ((weak, alias ("Common_Handler")));
+void TIM7_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH1_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH2_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH3_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH4_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH5_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DFSDM1_FLT0_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DFSDM1_FLT1_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void COMP_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void LPTIM1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void LPTIM2_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void USB_FS_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH6_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void DMA2_CH7_Handler(void) 				__attribute__ ((weak, alias ("Common_Handler")));
+void LPUART1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void QUADSPI_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C3_EV_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C3_ER_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void SAI1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void SWPMI1_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void TSC_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void LCD_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void AES_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void RNG_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void FPU_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void CRS_Handler(void) 						__attribute__ ((weak, alias ("Common_Handler")));
+void I2C4_EV_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
+void I2C4_ER_Handler(void) 					__attribute__ ((weak, alias ("Common_Handler")));
 
 
 uint32_t isr_vectors[] __attribute__ ((section (".isr_vectors"))) =
@@ -96,11 +117,11 @@ uint32_t isr_vectors[] __attribute__ ((section (".isr_vectors"))) =
 	(uint32_t)&RTC_WKUP_Handler,
 	(uint32_t)&FLASH_Handler,
 	(uint32_t)&RCC_Handler,
-	(uint32_t)&EXTI0_Handler,
-	(uint32_t)&EXTI1_Handler,
-	(uint32_t)&EXTI2_Handler,
-	(uint32_t)&EXTI3_Handler,
-	(uint32_t)&EXTI4_Handler,
+	(uint32_t)&ETXI0_Handler,
+	(uint32_t)&ETXI1_Handler,
+	(uint32_t)&ETXI2_Handler,
+	(uint32_t)&ETXI3_Handler,
+	(uint32_t)&ETXI4_Handler,
 	(uint32_t)&DMA1_CH1_Handler,
 	(uint32_t)&DMA1_CH2_Handler,
 	(uint32_t)&DMA1_CH3_Handler,
@@ -154,6 +175,27 @@ uint32_t isr_vectors[] __attribute__ ((section (".isr_vectors"))) =
 	(uint32_t)&DFSDM1_FLT0_Handler,
 	(uint32_t)&DFSDM1_FLT1_Handler,
 	0,
+	(uint32_t)&COMP_Handler,
+	(uint32_t)&LPTIM1_Handler,
+	(uint32_t)&LPTIM2_Handler,
+	(uint32_t)&USB_FS_Handler,
+	(uint32_t)&DMA2_CH6_Handler,
+	(uint32_t)&DMA2_CH7_Handler,
+	(uint32_t)&LPUART1_Handler,
+	(uint32_t)&QUADSPI_Handler,
+	(uint32_t)&I2C3_EV_Handler,
+	(uint32_t)&I2C3_ER_Handler,
+	(uint32_t)&SAI1_Handler,
+	0,
+	(uint32_t)&SWPMI1_Handler,
+	(uint32_t)&TSC_Handler,
+	(uint32_t)&LCD_Handler,
+	(uint32_t)&AES_Handler,
+	(uint32_t)&RNG_Handler,
+	(uint32_t)&FPU_Handler,
+	(uint32_t)&CRS_Handler,
+	(uint32_t)&I2C4_EV_Handler,
+	(uint32_t)&I2C3_ER_Handler
 };
 
 void Common_Handler(void)
@@ -164,6 +206,9 @@ void Common_Handler(void)
 
 void Reset_Handler(void)
 {
+	// copy .data to sram
+
+	// Init .bss section in sram to 0
 
 	main();
 }
