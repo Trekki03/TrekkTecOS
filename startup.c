@@ -5,6 +5,12 @@
 #define SRAM_END (SRAM_START + SRAM_SIZE)
 
 int main(void);
+extern uint32_t _endOfText;
+extern uint32_t _startOfData;
+extern uint32_t _endOfData;
+extern uint32_t _startOfBss;
+extern uint32_t _endOfBss;
+extern uint32_t _la_data;
 
 // "system interrupts"
 void Reset_Handler(void);
@@ -207,8 +213,28 @@ void Common_Handler(void)
 void Reset_Handler(void)
 {
 	// copy .data to sram
+uint32_t size = &_endOfData - &_startOfData;
+
+	uint8_t* pDst = (uint8_t*)&_startOfData; //sram
+	uint8_t* pSrc = (uint8_t*)&_la_data;	//flash
+
+	for (uint32_t i = 0; i < size; i++)
+	{
+		*pDst++ = *pSrc++;
+	}
+
 
 	// Init .bss section in sram to 0
 
+	size = &_endOfBss - &_startOfBss;
+
+	pDst = (uint8_t*)&_startOfBss;
+
+	for (uint32_t i = 0; i < size; i++)
+	{
+		*pDst++ = 0;
+	}
+
+	//call main
 	main();
 }

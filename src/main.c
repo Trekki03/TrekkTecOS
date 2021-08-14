@@ -3,6 +3,8 @@
 void setup(void);
 void loop(void);
 
+volatile uint32_t milli_ticks;
+volatile uint32_t micro_ticks;
 void InitalSetup()
 {
     milli_ticks = 0;

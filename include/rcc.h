@@ -23,7 +23,7 @@
  * 
  * @param source 
  */
-void SetSystemClockSource(system_clock_source_t source);
+void SetSystemClockSource(const system_clock_source_t source);
 
 
 

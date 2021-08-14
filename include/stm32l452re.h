@@ -10,7 +10,7 @@
  */
 
 //TODO: Kommentare und enum zuweisungen auf eine ebene setzen
-#ifndef STM32L452RE_H	
+#ifndef STM32L452RE_H
 #define STM32L452RE_H
 
 #include "stdint.h"
