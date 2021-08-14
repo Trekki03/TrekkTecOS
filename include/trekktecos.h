@@ -20,8 +20,7 @@
 #include "register.h"
 
 //TODO Put Systick (with Handler) in own File/Header
-volatile uint32_t micro_ticks;
-volatile uint32_t milli_ticks;
-
+extern volatile uint32_t micro_ticks;
+extern volatile uint32_t milli_ticks;
 
 #endif /* TREKKTECOS_H */

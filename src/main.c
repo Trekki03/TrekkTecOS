@@ -3,6 +3,8 @@
 void setup(void);
 void loop(void);
 
+volatile uint32_t milli_ticks;
+volatile uint32_t micro_ticks;
 void InitalSetup()
 {
     milli_ticks = 0;
@@ -49,6 +51,7 @@ void InitalSetup()
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 1);
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 2);
     WriteIntoRegister(&(STK->LOAD), 319, 24, 0);
+    WriteIntoRegister(&(STK->VAL), 0b0, 32, 0);
 }
 
 
