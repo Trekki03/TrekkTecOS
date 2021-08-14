@@ -17,12 +17,12 @@ SECTIONS
         _endOfText = .;
     } > FLASH
 
-    _la_data = LOADADDR(.data)
-    
+    _la_data = LOADADDR(.data);
+
     .data :
     {
         _startOfData = .;
-        *(data)
+        *(.data)
         . = ALIGN(4);
         _endOfData = .;
     } > SRAM AT > FLASH
