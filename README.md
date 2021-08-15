@@ -1,6 +1,6 @@
 ![Alt text](github/images/Logo.png?raw=true "TrekkTecOS Logo")
 
-### TrekkTecOs
+### TrekkTecOS
 TrekkTecOS is a framework for STM32 Nucleo Boards. It brings basic functions, comparable to the Arduino framework, like for exemple pinMode() and also more complex functions 
 for manipulating the underlying functions like configuring the PLL or the clock source.
 TrekkTecOS is build with no underlying standart like cmsis or STM HAL. Everything from the linker script to the startup file is self build.  
