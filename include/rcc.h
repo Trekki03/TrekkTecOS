@@ -15,7 +15,7 @@
 //Includes
 #include "bool.h"
 #ifdef STM32L452RE
-    #include "stm32l452re.h"
+    #include "mcu/stm32l452re.h"
 #endif
 
 /**
