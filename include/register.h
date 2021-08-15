@@ -23,6 +23,6 @@
  * @param bitSize bit length of the value e.g. if the value is 5 (0b101), the length is 3
  * @param offset offset from the beginning of the register
  */
-void WriteIntoRegister( volatile uint32_t* registerAddr, uint32_t value, uint32_t bitSize, uint32_t offset);
+void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, uint32_t bitSize, uint32_t offset);
 
 #endif /* REGISTER_H */

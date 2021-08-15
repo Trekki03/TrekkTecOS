@@ -1,6 +1,6 @@
 #include "register.h"
 
-void WriteIntoRegister( volatile uint32_t* registerAddr, uint32_t value, uint32_t size, uint32_t offset)
+void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, uint32_t size, uint32_t offset)
 {
     uint32_t clearValue = 0;
     for(int i = 0; i < size; i++)

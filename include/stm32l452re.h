@@ -332,15 +332,15 @@ typedef struct
 } systick_struct_t;
 
 
-extern rcc_struct_t*   RCC;                         ///< RCC base address struct   
-extern gpio_struct_t*  GPIOA;                       ///< GPIOA base address struct 
-extern gpio_struct_t*  GPIOB;                       ///< GPIOB base address struct
-extern gpio_struct_t*  GPIOC;                       ///< GPIOC base address struct
-extern gpio_struct_t*  GPIOD;                       ///< GPIOD base address struct
-extern gpio_struct_t*  GPIOE;                       ///< GPIOE base address struct
-extern gpio_struct_t*  GPIOH;                       ///< GPIOH base address struct
-extern pwr_struct_t*   PWR;                         ///< PWR base address struct
-extern flash_struct_t* FLASH;                       ///< FLASH base address struct
-extern systick_struct_t* STK;                       ///< SysTick base address struct
+extern rcc_struct_t*        const RCC;              ///< RCC base address struct   
+extern gpio_struct_t*       const GPIOA;            ///< GPIOA base address struct 
+extern gpio_struct_t*       const GPIOB;            ///< GPIOB base address struct
+extern gpio_struct_t*       const GPIOC;            ///< GPIOC base address struct
+extern gpio_struct_t*       const GPIOD;            ///< GPIOD base address struct
+extern gpio_struct_t*       const GPIOE;            ///< GPIOE base address struct
+extern gpio_struct_t*       const GPIOH;            ///< GPIOH base address struct
+extern pwr_struct_t*        const PWR;              ///< PWR base address struct
+extern flash_struct_t*      const FLASH;            ///< FLASH base address struct
+extern systick_struct_t*    const STK;              ///< SysTick base address struct
 
 #endif /* STM32L452RE_H */
