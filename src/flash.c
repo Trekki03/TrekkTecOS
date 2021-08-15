@@ -3,20 +3,23 @@
 
 void ToggleDataCache(bool onOff)
 {
-    WriteIntoRegister(&(FLASH->ACR), onOff, 1, 10);
+    uint32_t value = onOff ? TOGGLE_DATA_CACHE_VALUE_ON : TOGGLE_DATA_CACHE_VALUE_OFF;
+    WriteIntoRegister(TOGGLE_DATA_CACHE_REGISTER_ADDR, value, TOGGLE_DATA_CACHE_VALUE_LENGTH, TOGGLE_DATA_CACHE_REGISTER_OFFSET);
 }
 
 void ToggleInstructionCache(bool onOff)
 {
-    WriteIntoRegister(&(FLASH->ACR), onOff, 1, 9);
+    uint32_t value = onOff ? TOGGLE_INSTRUCTION_CACHE_VALUE_ON : TOGGLE_INSTRUCTION_CACHE_VALUE_OFF;
+    WriteIntoRegister(TOGGLE_INSTRUCTION_CACHE_REGISTER_ADDR, value, TOGGLE_INSTRUCTION_CACHE_VALUE_LENGTH, TOGGLE_INSTRUCTION_CACHE_REGISTER_OFFSET);
 }
 
 void TogglePrefetchBuffer(bool onOff)
 {
-    WriteIntoRegister(&(FLASH->ACR), onOff, 1, 8);
+    uint32_t value = onOff ? TOGGLE_PREFETCH_BUFFER_VALUE_ON : TOGGLE_PREFETCH_BUFFER_VALUE_OFF;
+    WriteIntoRegister(TOGGLE_PREFETCH_BUFFER_REGISTER_ADDR, value, TOGGLE_PREFETCH_BUFFER_VALUE_LENGTH, TOGGLE_PREFETCH_BUFFER_REGISTER_OFFSET);
 }
 
 void SetFlashLatency(flash_latency_value_t latency)
 {
-    WriteIntoRegister(&(FLASH->ACR), latency, 3, 0);
+    WriteIntoRegister(SET_FLASH_LATENCY_REGISTER_ADDR, latency, SET_FLASH_LATENCY_VALUE_LENGTH, SET_FLASH_LATENCY_REGISTER_OFFSET);
 }
