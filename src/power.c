@@ -3,5 +3,5 @@
 
 void SetVoltageRegulatorScale(volate_regulator_scale_t scale)
 {
-    WriteIntoRegister(&(PWR->CR1), scale, 2, 9);
+    WriteIntoRegister(SET_VOLTAGE_REGULATOR_SCALE_REGISTER_ADDR, scale, SET_VOLTAGE_REGULATOR_SCALE_VALUE_LENGTH, SET_VOLTAGE_REGULATOR_SCALE_REGISTER_OFFSET);
 }

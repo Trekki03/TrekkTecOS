@@ -51,6 +51,16 @@
 #define SET_PULLUP_PULLDOWN_REGISTER_ADDR &(port->PUPDR)
 #define TOGGLE_PIN_OUTPUT_REGISTER_ADDR &(port->ODR)
 
+// POWER Registers and Values
+// --------------------------
+
+//Set Voltage Regulator Scale
+#define SET_VOLTAGE_REGULATOR_SCALE_REGISTER_ADDR &(PWR->CR1)
+#define SET_VOLTAGE_REGULATOR_SCALE_VALUE_LENGTH 2
+#define SET_VOLTAGE_REGULATOR_SCALE_REGISTER_OFFSET 9
+
+
+
 
 
 // RCC Type Defs
