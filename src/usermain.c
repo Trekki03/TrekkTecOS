@@ -19,12 +19,12 @@ void loop()
         ulTime = milli_ticks;
         if(lastState == on)
         {
-            TogglePin(GPIOB, 13, off);
+            TogglePinOutput(GPIOB, 13, off);
             lastState = off;
         }
         else
         {
-            TogglePin(GPIOB, 13, on);
+            TogglePinOutput(GPIOB, 13, on);
             lastState = on;
         }
     }

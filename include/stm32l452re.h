@@ -15,6 +15,7 @@
 #include "stdint.h"
 
 // Flash Registers and Values
+// --------------------------
 
 //ToggleDataCache
 #define TOGGLE_DATA_CACHE_REGISTER_ADDR &(FLASH->ACR)
@@ -42,6 +43,13 @@
 #define SET_FLASH_LATENCY_VALUE_LENGTH 3
 #define SET_FLASH_LATENCY_REGISTER_OFFSET 0
 
+// GPIO Registers and Values
+// --------------------------
+
+#define SET_PIN_MODE_REGISTER_ADDR &(port->MODER)  
+#define SET_PIN_SPEED_REGISTER_ADDR &(port->OSPEEDR)
+#define SET_PULLUP_PULLDOWN_REGISTER_ADDR &(port->PUPDR)
+#define TOGGLE_PIN_OUTPUT_REGISTER_ADDR &(port->ODR)
 
 
 
