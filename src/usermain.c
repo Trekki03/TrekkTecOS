@@ -4,9 +4,12 @@ bool lastState;
 void setup()
 {
     lastState = off;
-    SetPinMode(GPIOB, 13, GPIO_OUTPUT_MODE);
-    SetPinSpeed(GPIOB, 13, GPIO_MEDIUM_SPEED);
-    SetPullUpPullDown(GPIOB, 13, NO_PULLUP_NO_PULLDOWN);
+    SetPinMode(GPIOC, 7, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOC, 7, GPIO_MEDIUM_SPEED);
+    SetPinMode(GPIOB, 7, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOB, 7, GPIO_MEDIUM_SPEED);
+    SetPinMode(GPIOB, 14, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOB, 14, GPIO_MEDIUM_SPEED);
 }
 
 
@@ -19,12 +22,16 @@ void loop()
         ulTime = milli_ticks;
         if(lastState == on)
         {
-            TogglePinOutput(GPIOB, 13, off);
+            TogglePinOutput(GPIOC, 7,  off);
+            TogglePinOutput(GPIOB, 7,  on);
+            TogglePinOutput(GPIOB, 14, off);
             lastState = off;
         }
         else
         {
-            TogglePinOutput(GPIOB, 13, on);
+            TogglePinOutput(GPIOC, 7,  on);
+            TogglePinOutput(GPIOB, 7,  off);
+            TogglePinOutput(GPIOB, 14, on);
             lastState = on;
         }
     }
