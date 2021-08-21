@@ -50,8 +50,12 @@ void ToggleHSI16(bool onOff);
  */
 void ToggleHSE(bool onOff);
 
-
-
+/**
+ * @brief enables or disables the HSE Bypass (On if HSE is a clock source, Off if HSE is a oscillator)
+ * 
+ * @param onOff 
+ */
+void ToggleHSEByPass(bool onOff);
 
 
 /**

@@ -14,7 +14,7 @@ void ToggleMSI(bool onOff)
     while( !(TOGGLE_MSI_STATUS_REGISTER & (value << TOGGLE_MSI_STATUS_REGISTER_OFFSET)) ); 
 }
 
-void ToggleHSI(bool onOff)
+void ToggleHSI16(bool onOff)
 {
     uint32_t value = onOff ? TOGGLE_HSI_VALUE_ON : TOGGLE_HSI_VALUE_OFF;
     WriteIntoRegister(TOGGLE_HSI_REGISTER_ADDR, value, TOGGLE_HSI_VALUE_LENGTH, TOGGLE_HSI_REGISTER_OFFSET);
@@ -26,6 +26,13 @@ void ToggleHSE(bool onOff)
     uint32_t value = onOff ? TOGGLE_HSE_VALUE_ON : TOGGLE_HSE_VALUE_OFF;
     WriteIntoRegister(TOGGLE_HSE_REGISTER_ADDR, value, TOGGLE_HSE_VALUE_LENGTH, TOGGLE_HSE_REGISTER_OFFSET);
     while( !(TOGGLE_HSE_STATUS_REGISTER & (value << TOGGLE_HSE_STATUS_REGISTER_OFFSET)) ); 
+}
+
+void ToggleHSEByPass(bool onOff)
+{
+    uint32_t value = onOff ? TOGGLE_HSE_BYPASS_VALUE_ON : TOGGLE_HSE_BYPASS_VALUE_OFF;
+    WriteIntoRegister(TOGGLE_HSE_BYPASS_REGISTER_ADDR, value, TOGGLE_HSE_BYPASS_VALUE_LENGTH, TOGGLE_HSE_BYPASS_REGISTER_OFFSET);
+    
 }
 
 void TogglePLL(bool onOff)

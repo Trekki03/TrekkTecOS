@@ -9,6 +9,7 @@ void InitalSetup()
 {
     milli_ticks = 0;
     micro_ticks = 0;
+    ToggleHSEByPass(on);
     ToggleHSE(on);
     TogglePowerInterfaceClock(on);
     SetVoltageRegulatorScale(VOLTAGE_SCALE_2);
