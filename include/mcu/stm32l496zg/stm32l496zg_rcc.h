@@ -1,15 +1,15 @@
 /**
- * @file stm32l452re_rcc.h
+ * @file stm32l496zg_rcc.h
  * @author Trekki03 (trekki03_yt@yahoo.com)
- * @brief Contains all stm32l452re specific rcc values/registers etc.
+ * @brief Contains all stm32l496zg specific rcc values/registers etc.
  * @version 0.1
  * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef STM32L452RE_RCC_H
-#define STM32L452RE_RCC_H
+#ifndef STM32L496ZG_RCC_H
+#define STM32L496ZG_RCC_H
 
 #include "stdint.h"
 
@@ -344,5 +344,5 @@ typedef enum
 #define TOGGLE_GPIO_CLOCK_VALUE_OFF 0
 #define TOGGLE_GPIO_CLOCK_VALUE_LENGTH 1
 
-#endif /* STM32L452RE_RCC_H */
+#endif /* STM32L496ZG_RCC_H */
 

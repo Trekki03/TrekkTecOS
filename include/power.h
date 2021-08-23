@@ -16,6 +16,9 @@
 #ifdef STM32L452RE
     #include "mcu/stm32l452re.h"
 #endif
+#ifdef STM32L496ZG
+#include "mcu/stm32l496zg.h"
+#endif
 
 /**
  * @brief Sets the Voltage Regulator Scale

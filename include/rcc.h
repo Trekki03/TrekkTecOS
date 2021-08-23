@@ -17,6 +17,9 @@
 #ifdef STM32L452RE
     #include "mcu/stm32l452re.h"
 #endif
+#ifdef STM32L496ZG
+#include "mcu/stm32l496zg.h"
+#endif
 
 /**
  * @brief selects, which source should be used for the SysClock

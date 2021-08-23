@@ -1,15 +1,15 @@
 /**
- * @file stm32l452re_power.h
+ * @file stm32l496zg_power.h
  * @author Trekki03 (trekki03_yt@yahoo.com)
- * @brief Contains all stm32l452re specific power values/registers etc.
+ * @brief Contains all stm32l496zg specific power values/registers etc.
  * @version 0.1
  * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef STM32L452RE_POWER_H
-#define STM32L452RE_POWER_H
+#ifndef STM32L496ZG_POWER_H
+#define STM32L496ZG_POWER_H
 
 #include "stdint.h"
 
@@ -75,4 +75,4 @@ typedef enum
 #define SET_VOLTAGE_REGULATOR_SCALE_REGISTER_OFFSET 9
 
 
-#endif /* STM32L452RE_POWER_H */
+#endif /* STM32L496ZG_POWER_H */

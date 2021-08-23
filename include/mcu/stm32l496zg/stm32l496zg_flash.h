@@ -1,15 +1,15 @@
 /**
- * @file stm32l452re_flash.h
+ * @file stm32l496zg_flash.h
  * @author Trekki03 (trekki03_yt@yahoo.com)
- * @brief Contains all stm32l452re specific flash values/registers etc.
+ * @brief Contains all stm32l496zg specific flash values/registers etc.
  * @version 0.1
  * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef STM32L452RE_FLASH_H
-#define STM32L452RE_FLASH_H
+#ifndef STM32L496ZG_FLASH_H
+#define STM32L496ZG_FLASH_H
 
 #include "stdint.h"
 
@@ -88,4 +88,4 @@ typedef enum
 #define SET_FLASH_LATENCY_REGISTER_OFFSET 0
 
 
-#endif /* STM32L452RE_FLASH_H */
+#endif /* STM32L96ZG_FLASH_H */

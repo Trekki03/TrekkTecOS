@@ -1,15 +1,15 @@
 /**
- * @file stm32l452re_systick.h
+ * @file stm32l496zg_systick.h
  * @author Trekki03 (trekki03_yt@yahoo.com)
- * @brief Contains all stm32l452re specific systick values/registers etc.
+ * @brief Contains all stm32l496zg specific systick values/registers etc.
  * @version 0.1
  * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef STM32L452RE_SYSTICK_H
-#define STM32L452RE_SYSTICK_H
+#ifndef STM32L496ZG_SYSTICK_H
+#define STM32L496ZG_SYSTICK_H
 
 #include "stdint.h"
 
@@ -30,4 +30,4 @@ typedef struct
 extern systick_struct_t*    const STK;              ///< SysTick base address struct
 
 
-#endif /* STM32L452RE_SYSTICK_H */
+#endif /* STM32L496ZG_SYSTICK_H */

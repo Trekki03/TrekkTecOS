@@ -1,4 +1,4 @@
-#include "mcu/stm32l452re.h"
+#include "mcu/stm32l496zg.h"
 
 // Register Struct Adresses
 rcc_struct_t*        const RCC      = (rcc_struct_t*        const)  0x40021000;

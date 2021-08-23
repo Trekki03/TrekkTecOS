@@ -15,6 +15,7 @@ void setup()
 
 void loop()
 {
+    //Blinky Example for Nucleo144-L496ZG
     static uint32_t ulTime = 0;
 
     if((milli_ticks - ulTime) >= 500)

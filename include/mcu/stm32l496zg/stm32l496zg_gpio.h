@@ -1,15 +1,15 @@
 /**
- * @file stm32l452re_gpio.h
+ * @file stm32l496zg_gpio.h
  * @author Trekki03 (trekki03_yt@yahoo.com)
- * @brief Contains all stm32l452re specific gpio values/registers etc.
+ * @brief Contains all stm32l496zg specific gpio values/registers etc.
  * @version 0.1
  * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#ifndef STM32L452RE_GPIO_H
-#define STM32L452RE_GPIO_H
+#ifndef STM32L496ZG_GPIO_H
+#define STM32L496ZG_GPIO_H
 
 #include "stdint.h"
 
@@ -85,4 +85,4 @@ typedef enum
 #define TOGGLE_PIN_OUTPUT_REGISTER_ADDR &(port->ODR)
 
 
-#endif /* STM32L452RE_GPIO_H */
+#endif /* STM32L496ZG_GPIO_H */
