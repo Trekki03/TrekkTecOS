@@ -8,10 +8,10 @@ TrekkTecOS is build with no underlying standart like cmsis or STM HAL. Everythin
 Only a small part of the features exists yet. And the features that exist are not in their final form. For example, you have to hand over the GPIO port and pin for the pinMode() function instead of only the pin. This will change in the future to be more "Arduino like" 
 
 ## Supported Devices 
-| Devices               | Define         |Supported? | Status               |
-|-----------------------|----------------|-----------|----------------------|
-| Nucleo64 STM32L452RE  |  STM32L452RE   | partly    | currently worked on  | 
-| Nucleo144 STM32L496   |  STM32L496     | no yet    | next target          | 
+|         Devices       | Makefile Linker | Makefile Controller | Makefile Startup    | Supported? |        Status        |
+|-----------------------|-----------------|---------------------|---------------------|------------|----------------------|
+| Nucleo144 STM32L496ZG |  stm32l496zg.ld |      STM32L496ZG    | stm32l496zg_startup |  partly    | currently worked on  | 
+| Nucleo64 STM32L452RE  |  stm32l452re.ld |      STM32L452RE    | stm32l452re_startup |  not yet   | next target          | 
 
 ## How to get started
 All you need to do is download the repository and execute the make file. Your code goes into the usermain.c or how ever you want to call you main file.\
