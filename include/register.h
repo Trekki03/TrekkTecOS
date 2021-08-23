@@ -32,7 +32,7 @@ void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, u
  * @param size bit length of the value e.g. if the value is 5 (0b101), the length is 3
  * @param offset offset from the beginning of the register where the value is located
  */
-void ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
+uint32_t ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
 
 
 #endif /* REGISTER_H */

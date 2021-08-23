@@ -12,6 +12,7 @@
 #ifndef STM32L452RE_H
 #define STM32L452RE_H
 
+//TODO CREATE stm32l496zg File when finished
 #include "stm32l452re/stm32l452re_rcc.h"
 #include "stm32l452re/stm32l452re_flash.h"
 #include "stm32l452re/stm32l452re_gpio.h"
