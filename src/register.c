@@ -10,3 +10,13 @@ void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, u
     *registerAddr &= ~(clearValue << offset);
     *registerAddr |= (value << offset);
 }
+
+void ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset)
+{
+    uint32_t value = *registerAddr, clearValue = 0;
+    for (uint32_t i = 0; i < size; i++)
+    {
+        clearValue = (clearValue << 1) | 0b1;
+    }
+    return (value & (clearValue << offset)) >> offset;
+}

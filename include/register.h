@@ -16,7 +16,7 @@
 #include "stdint.h"
 
 /**
- * @brief Write a value with of offset from the beginning into a register
+ * @brief Write a value with offset from the beginning into a register
  * 
  * @param registerAddr Address of the register. Must be a register address e.g &(RCC->CR)
  * @param value value which should be written into the register
@@ -24,5 +24,15 @@
  * @param offset offset from the beginning of the register
  */
 void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, uint32_t bitSize, uint32_t offset);
+
+/**
+ * @brief Read a value of an register
+ * 
+ * @param registerAddr Address of the register. Must be a register address e.g &(RCC->CR)
+ * @param size bit length of the value e.g. if the value is 5 (0b101), the length is 3
+ * @param offset offset from the beginning of the register where the value is located
+ */
+void ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
+
 
 #endif /* REGISTER_H */
