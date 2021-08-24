@@ -229,7 +229,7 @@ uint32_t size = (uint32_t)&_endOfData - (uint32_t)&_startOfData;
 
 	// Init .bss section in sram to 0
 
-	size = &_endOfBss - &_startOfBss;
+	size = (uint32_t)&_endOfBss - (uint32_t)&_startOfBss;
 
 	pDst = (uint8_t*)&_startOfBss;
 

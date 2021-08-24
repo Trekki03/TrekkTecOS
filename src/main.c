@@ -3,12 +3,8 @@
 void setup(void);
 void loop(void);
 
-volatile uint32_t milli_ticks;
-volatile uint32_t micro_ticks;
 void InitalSetup()
 {
-    milli_ticks = 0;
-    micro_ticks = 0;
     ToggleHSEByPass(on);
     ToggleHSE(on);
     TogglePowerInterfaceClock(on);
@@ -53,16 +49,6 @@ void InitalSetup()
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 2);
     WriteIntoRegister(&(STK->LOAD), 319, 24, 0);
     WriteIntoRegister(&(STK->VAL), 0b0, 32, 0);
-}
-
-
-void SysTick_Handler(void)
-{
-    micro_ticks += 4;
-    if( (micro_ticks % 1000) == 0)
-    {
-        milli_ticks++;
-    }
 }
 
 

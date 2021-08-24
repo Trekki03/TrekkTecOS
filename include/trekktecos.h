@@ -18,9 +18,6 @@
 #include "rcc.h"
 #include "bool.h"
 #include "register.h"
-
-//TODO Put Systick (with Handler) in own File/Header
-extern volatile uint32_t micro_ticks;
-extern volatile uint32_t milli_ticks;
+#include "systick.h"
 
 #endif /* TREKKTECOS_H */
