@@ -3,33 +3,43 @@
 void setup()
 {
     //Onboard LEDS
-    SetPinMode(GPIOC, 7, GPIO_OUTPUT_MODE);
-    SetPinSpeed(GPIOC, 7, GPIO_VERY_HIGH_SPEED);
-    SetPinMode(GPIOB, 7, GPIO_OUTPUT_MODE);
-    SetPinSpeed(GPIOB, 7, GPIO_VERY_HIGH_SPEED);
-    SetPinMode(GPIOB, 14, GPIO_OUTPUT_MODE);
-    SetPinSpeed(GPIOB, 14, GPIO_VERY_HIGH_SPEED);
+    SetPinMode(GPIOC_7, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOC_7, GPIO_VERY_HIGH_SPEED);
+    SetPinMode(GPIOB_7, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOB_7, GPIO_VERY_HIGH_SPEED);
+    SetPinMode(GPIOB_14, GPIO_OUTPUT_MODE);
+    SetPinSpeed(GPIOB_14, GPIO_VERY_HIGH_SPEED);
 
-    SetPinMode(GPIOC, 13, GPIO_INPUT_MODE);
-    SetPullUpPullDown(GPIOC, 13, PULLDOWN);
-    SetPinSpeed(GPIOC, 13, GPIO_LOW_SPEED);
+    SetPinMode(GPIOC_13, GPIO_INPUT_MODE);
+    SetPullUpPullDown(GPIOC_13, PULLDOWN);
+    SetPinSpeed(GPIOC_13, GPIO_LOW_SPEED);
+
+
+    //MCO
+    //WriteIntoRegister(&(GPIOA->MODER), 0b10, 2, 16);
+    SetPinMode(GPIOA_8, GPIO_ALTERNATE_FUNCTION_MODE);
+    SetPinSpeed(GPIOA_8, GPIO_VERY_HIGH_SPEED);
+    //Set MCO Divider to 1:
+    WriteIntoRegister(&(RCC->CFGR), 0b000, 3, 18);
+    //Enable MCO Sysclock outpt:
+    WriteIntoRegister(&(RCC->CFGR), 0b0001, 4, 24);
 }
 
 
 void loop()
 {
     //Test for Nucleo144-L496ZG
-    if(ReadPinInput(GPIOC, 13))
+    if(ReadPinInput(GPIOC_13))
     {
-        TogglePinOutput(GPIOC, 7, on);
-        TogglePinOutput(GPIOB, 7, on);
-        TogglePinOutput(GPIOB, 14, on);
+        TogglePinOutput(GPIOC_7, on);
+        TogglePinOutput(GPIOB_7, on);
+        TogglePinOutput(GPIOB_14, on);
     }
     else
     {
-        TogglePinOutput(GPIOC, 7, off);
-        TogglePinOutput(GPIOB, 7, off);
-        TogglePinOutput(GPIOB, 14, off);
+        TogglePinOutput(GPIOC_7, off);
+        TogglePinOutput(GPIOB_7, off);
+        TogglePinOutput(GPIOB_14, off);
     }
 
 }

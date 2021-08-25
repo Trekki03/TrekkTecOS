@@ -7,7 +7,12 @@ gpio_struct_t*       const GPIOB    = (gpio_struct_t*       const)  0x48000400;
 gpio_struct_t*       const GPIOC    = (gpio_struct_t*       const)  0x48000800;
 gpio_struct_t*       const GPIOD    = (gpio_struct_t*       const)  0x48000C00;
 gpio_struct_t*       const GPIOE    = (gpio_struct_t*       const)  0x48001000;
+gpio_struct_t*       const GPIOF    = (gpio_struct_t*       const)  0x48001400;
+gpio_struct_t*       const GPIOG    = (gpio_struct_t*       const)  0x48001800;
 gpio_struct_t*       const GPIOH    = (gpio_struct_t*       const)  0x48001C00;
+gpio_struct_t*       const GPIOI    = (gpio_struct_t*       const)  0x48002000;
 pwr_struct_t*        const PWR      = (pwr_struct_t*        const)  0x40007000;
 flash_struct_t*      const FLASH    = (flash_struct_t*      const)  0x40022000;
 systick_struct_t*    const STK      = (systick_struct_t*    const)  0xE000E010;
+
+//GPIO Pins
