@@ -39,7 +39,7 @@ typedef struct
     volatile uint32_t APB1RSTR2;                    ///< apb1 peripheral reset register 2 
     volatile uint32_t APB2RSTR;                     ///< apb2 peripheral reset register   
              uint32_t RCC_OFFSET_DONT_USE_3;  
-    volatile uint32_t AHB1ENR;                      ///< ahb1 peripheral clock enable register    
+          volatile uint32_t AHB1ENR;                      ///< ahb1 peripheral clock enable register    
     volatile uint32_t AHB2ENR;                      ///< ahb2 peripheral clock enable register   
     volatile uint32_t AHB3ENR;                      ///< ahb3 peripheral clock enable register   
              uint32_t RCC_OFFSET_DONT_USE_4;  
@@ -229,7 +229,11 @@ typedef enum
     GPIO_C_ENABLE_PORT = 2,                         ///< GPIO Enable Selection: Port C
     GPIO_D_ENABLE_PORT = 3,                         ///< GPIO Enable Selection: Port D
     GPIO_E_ENABLE_PORT = 4,                         ///< GPIO Enable Selection: Port E
-    GPIO_H_ENABLE_PORT = 7                          ///< GPIO Enable Selection: Port H
+    GPIO_F_ENABLE_PORT = 5,                         ///< GPIO Enable Selection: Port F
+    GPIO_G_ENABLE_PORT = 6,                         ///< GPIO Enable Selection: Port G
+    GPIO_H_ENABLE_PORT = 7,                         ///< GPIO Enable Selection: Port H
+    GPIO_I_ENABLE_PORT = 8,                         ///< GPIO Enable Selection: Port I
+		
 } gpio_enable_port_t;
 
 

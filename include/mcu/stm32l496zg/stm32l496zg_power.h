@@ -22,9 +22,9 @@
 typedef struct
 {
     volatile uint32_t CR1;                          ///< Power control register 1    
-    volatile uint32_t CR2;                          ///< Power controk register 2
-    volatile uint32_t CR3;                          ///< Power controk register 3   
-    volatile uint32_t CR4;                          ///< Power controk register 4   
+    volatile uint32_t CR2;                          ///< Power control register 2
+    volatile uint32_t CR3;                          ///< Power control register 3   
+    volatile uint32_t CR4;                          ///< Power control register 4   
     volatile uint32_t SR1;                          ///< Power status register 1
     volatile uint32_t SR2;                          ///< Power status register 2   
     volatile uint32_t SCR;                          ///< Power status clear register   

@@ -28,7 +28,10 @@ void InitalSetup()
     ToggleGpioClock(GPIO_C_ENABLE_PORT, on);
     ToggleGpioClock(GPIO_D_ENABLE_PORT, on);
     ToggleGpioClock(GPIO_E_ENABLE_PORT, on);
+    ToggleGpioClock(GPIO_F_ENABLE_PORT, on);
+    ToggleGpioClock(GPIO_G_ENABLE_PORT, on);
     ToggleGpioClock(GPIO_H_ENABLE_PORT, on);
+    ToggleGpioClock(GPIO_I_ENABLE_PORT, on);
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 0);
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 1);
     WriteIntoRegister(&(STK->CTRL), 0b1, 1, 2);
