@@ -1,12 +1,9 @@
 /**
  * @file stm32l496zg.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief File contains all the registers and typedef enums etc. for stm32l496zg
- * @version 1.0
- * @date 2021-08-15
  * 
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef STM32L496ZG_H
@@ -21,3 +18,5 @@
 
 
 #endif /* STM32L496ZG_H */
+
+/* END OF FILE */
