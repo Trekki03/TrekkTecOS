@@ -1,12 +1,9 @@
 /**
  * @file bool.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief File contains definitions for a simple bool
- * @version 0.1
- * @date 2021-07-31
  * 
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef BOOL_H
@@ -67,3 +64,5 @@ typedef int bool;
 #define OFF 0UL
 
 #endif /* BOOL_H */
+
+/* END OF LINE */

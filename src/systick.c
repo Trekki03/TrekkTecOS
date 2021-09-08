@@ -22,3 +22,13 @@ void MicroDelay(uint32_t delayinUs)
     uint32_t timeAtStart = micro_ticks;
     while ((micro_ticks - timeAtStart) < delayinUs);
 }
+
+uint32_t getMicroTicks(void)
+{
+    return micro_ticks;
+}
+
+uint32_t getMilliTicks(void)
+{
+    return milli_ticks;
+}

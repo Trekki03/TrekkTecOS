@@ -1,12 +1,9 @@
 /**
  * @file trekktecos.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief Contains all the includes of the TrekkTecOS Framework
- * @version 0.1
- * @date 2021-07-31
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef TREKKTECOS_H
@@ -21,3 +18,5 @@
 #include "systick.h"
 
 #endif /* TREKKTECOS_H */
+
+/* END OF FILE */

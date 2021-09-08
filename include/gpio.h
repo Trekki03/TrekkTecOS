@@ -1,23 +1,20 @@
 /**
  * @file gpio.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief This file contains the functions concerning the gpio registers
- * @version 0.1
- * @date 2021-07-31
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef GPIO_H
 #define GPIO_H
 
-// Includes
+// MCU specific includes
 #ifdef STM32L452RE
-#include "mcu/stm32l452re.h"
+#   include "mcu/stm32l452re.h"
 #endif
 #ifdef STM32L496ZG
-#include "mcu/stm32l496zg.h"
+#   include "mcu/stm32l496zg.h"
 #endif
 
 #include <stdint.h>
@@ -69,7 +66,6 @@ void TogglePinOutput(gpio_pin_struct_t* const pin, bool onOff);
  */
 bool ReadPinInput(gpio_pin_struct_t* const pin);
 
-
-
-
 #endif /* GPIO_H */
+
+/* END OF FILE */

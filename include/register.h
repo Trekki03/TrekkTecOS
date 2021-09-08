@@ -1,12 +1,9 @@
 /**
  * @file register.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief contains functions for manipulating registers
- * @version 0.1
- * @date 2021-07-31
  * 
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef REGISTER_H
@@ -34,5 +31,6 @@ void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, u
  */
 uint32_t ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
 
-
 #endif /* REGISTER_H */
+
+/* END OF FILE */

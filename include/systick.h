@@ -3,9 +3,6 @@
 
 #include <stdint.h>
 
-extern volatile uint32_t micro_ticks;
-extern volatile uint32_t milli_ticks;
-
 /**
  * @brief Delay Function
  * 
@@ -24,4 +21,20 @@ void Delay(uint32_t delayInMs);
  */
 void MicroDelay(uint32_t delayinUs);
 
+/**
+ * @brief Get the Micro Ticks 
+ * 
+ * @return uint32_t micro ticks
+ */
+uint32_t getMicroTicks(void);
+
+/**
+ * @brief Get the Milli Ticks
+ * 
+ * @return uint32_t milli ticks
+ */
+uint32_t getMilliTicks(void);
+
 #endif /* SYSTICK_H */
+
+/* END OF FILE */
