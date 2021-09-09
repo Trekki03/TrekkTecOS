@@ -41,7 +41,7 @@ extern gpio_struct_t*       const GPIOC;            ///< GPIOC base address stru
 extern gpio_struct_t*       const GPIOD;            ///< GPIOD base address struct
 extern gpio_struct_t*       const GPIOE;            ///< GPIOE base address struct
 extern gpio_struct_t*       const GPIOH;            ///< GPIOH base address struct
-
+extern gpio_struct_t*	    const GPIOG;	    ///< GPIOG base address struct
 /**
  * @brief GPIO Pin Typedef
  * 
