@@ -15,19 +15,19 @@
 
 typedef struct
 {
-    volatile uint32_t ACR;               ///< Flash access conrol register      
-    volatile uint32_t PDKEYR;            ///< Flash Power-down key register  
-    volatile uint32_t KEYR;              ///< Flash key register    
-    volatile uint32_t OPTKEYR;           ///< Flash option key register
-    volatile uint32_t SR;                ///< Flash status register
-    volatile uint32_t CR;                ///< Flash control register
-    volatile uint32_t ECCR;              ///< Flash ECC register
+    volatile uint32_t ACR;              ///< Flash access conrol register      
+    volatile uint32_t PDKEYR;           ///< Flash Power-down key register  
+    volatile uint32_t KEYR;             ///< Flash key register    
+    volatile uint32_t OPTKEYR;          ///< Flash option key register
+    volatile uint32_t SR;               ///< Flash status register
+    volatile uint32_t CR;               ///< Flash control register
+    volatile uint32_t ECCR;             ///< Flash ECC register
     volatile uint32_t FLASH_OFFSET_DONT_USE_1;
-    volatile uint32_t OPTR;              ///< Flash option register
-    volatile uint32_t PCROP1SR;          ///< Flash PCROP Start address register
-    volatile uint32_t PCROP1ER;          ///< Flash PCROÜ End address register
-    volatile uint32_t WRP1AR;            ///< Flash WRP area A address register
-    volatile uint32_t WRP1BR;            ///< Flash WRP area B address register
+    volatile uint32_t OPTR;             ///< Flash option register
+    volatile uint32_t PCROP1SR;         ///< Flash PCROP Start address register
+    volatile uint32_t PCROP1ER;         ///< Flash PCROÜ End address register
+    volatile uint32_t WRP1AR;           ///< Flash WRP area A address register
+    volatile uint32_t WRP1BR;           ///< Flash WRP area B address register
 
 } flash_struct_t;
 

@@ -15,53 +15,53 @@
 
 typedef struct
 {
-    volatile uint32_t CR1;               ///< Power control register 1    
-    volatile uint32_t CR2;               ///< Power controk register 2
-    volatile uint32_t CR3;               ///< Power controk register 3   
-    volatile uint32_t CR4;               ///< Power controk register 4   
-    volatile uint32_t SR1;               ///< Power status register 1
-    volatile uint32_t SR2;               ///< Power status register 2   
-    volatile uint32_t SCR;               ///< Power status clear register   
+    volatile uint32_t CR1;              ///< Power control register 1    
+    volatile uint32_t CR2;              ///< Power controk register 2
+    volatile uint32_t CR3;              ///< Power controk register 3   
+    volatile uint32_t CR4;              ///< Power controk register 4   
+    volatile uint32_t SR1;              ///< Power status register 1
+    volatile uint32_t SR2;              ///< Power status register 2   
+    volatile uint32_t SCR;              ///< Power status clear register   
              uint32_t PWR_OFFSET_DONT_USE_0; 
-    volatile uint32_t PUCRA;             /**< Power Port A pull-up control 
+    volatile uint32_t PUCRA;            /**< Power Port A pull-up control 
                                             register                          */
-    volatile uint32_t PDCRA;             /**< Power Port A pull-down control 
+    volatile uint32_t PDCRA;            /**< Power Port A pull-down control 
                                             register                          */
-    volatile uint32_t PUCRB;             /**< Power Port B pull-up control 
+    volatile uint32_t PUCRB;            /**< Power Port B pull-up control 
                                             register                          */
-    volatile uint32_t PDCRB;             /**< Power Port B pull-down control 
+    volatile uint32_t PDCRB;            /**< Power Port B pull-down control 
                                             register                          */
-    volatile uint32_t PUCRC;             /**< Power Port C pull-up control 
+    volatile uint32_t PUCRC;            /**< Power Port C pull-up control 
                                             register                          */
-    volatile uint32_t PDCRC;             /**< Power Port C pull-down control   
+    volatile uint32_t PDCRC;            /**< Power Port C pull-down control   
                                             register                          */
-    volatile uint32_t PUCRD;             /**< Power Port D pull-up control 
+    volatile uint32_t PUCRD;            /**< Power Port D pull-up control 
                                             register                          */
-    volatile uint32_t PDCRD;             /**< Power Port D pull-down control 
+    volatile uint32_t PDCRD;            /**< Power Port D pull-down control 
                                             register                          */
-    volatile uint32_t PUCRE;             /**< Power Port E pull-up control 
+    volatile uint32_t PUCRE;            /**< Power Port E pull-up control 
                                             register                          */
-    volatile uint32_t PDCRE;             /**< Power Port E pull-down control 
+    volatile uint32_t PDCRE;            /**< Power Port E pull-down control 
                                             register                          */
              uint32_t PWR_OFFSET_DONT_USE_1;
              uint32_t PWR_OFFSET_DONT_USE_2;
              uint32_t PWR_OFFSET_DONT_USE_3;
              uint32_t PWR_OFFSET_DONT_USE_4;
-    volatile uint32_t PUCRH;             /**< Power Port H pull-up control 
+    volatile uint32_t PUCRH;            /**< Power Port H pull-up control 
                                             register                          */
-    volatile uint32_t PDCRH;             /**< Power Port H pull-down control 
+    volatile uint32_t PDCRH;            /**< Power Port H pull-down control 
                                             register                          */
 } pwr_struct_t;
 
-#define PWR (pwr_struct_t*)  0x40007000  ///< PWR base address struct
+#define PWR (pwr_struct_t*)  0x40007000 ///< PWR base address struct
 
 
 /******************* Typedefs *******************/
 
 typedef enum
 {
-    VOLTAGE_SCALE_1 = 0b01,              ///< voltageregulator scale 1
-    VOLTAGE_SCALE_2 = 0b10               ///< voltageregulator scale 2
+    VOLTAGE_SCALE_1 = 0b01,             ///< voltageregulator scale 1
+    VOLTAGE_SCALE_2 = 0b10              ///< voltageregulator scale 2
 
 } volate_regulator_scale_t;
 

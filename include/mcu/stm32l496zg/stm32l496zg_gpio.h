@@ -15,45 +15,45 @@
 
 typedef struct
 {
-    volatile uint32_t MODER;                ///< GPIO port mode register
-    volatile uint32_t OTYPER;               ///< GPIO port output type register
-    volatile uint32_t OSPEEDR;              ///< GPIO port output speed register
-    volatile uint32_t PUPDR;                /**< GPIO port pull-up/pull-down 
-                                                 register                      */
+    volatile uint32_t MODER;            ///< GPIO port mode register
+    volatile uint32_t OTYPER;           ///< GPIO port output type register
+    volatile uint32_t OSPEEDR;          ///< GPIO port output speed register
+    volatile uint32_t PUPDR;            /**< GPIO port pull-up/pull-down 
+                                            register                      */
 
-    volatile uint32_t IDR;                  ///< GPIO port input data register
-    volatile uint32_t ODR;                  ///< GPIO port output data register
-    volatile uint32_t BSRR;                 /**< GPIO port bit set/reset 
-                                                register                      */
-    volatile uint32_t LCKR;                 /**< GPIO port configuration lock 
-                                                register                      */
+    volatile uint32_t IDR;              ///< GPIO port input data register
+    volatile uint32_t ODR;              ///< GPIO port output data register
+    volatile uint32_t BSRR;             /**< GPIO port bit set/reset 
+                                            register                      */
+    volatile uint32_t LCKR;             /**< GPIO port configuration lock 
+                                            register                      */
 
-    volatile uint32_t AFRL;                 /**< GPIO port alternate function 
-                                                low register                  */
+    volatile uint32_t AFRL;             /**< GPIO port alternate function 
+                                            low register                  */
 
-    volatile uint32_t AFRH;                 /**< GPIO port alternate function 
-                                                high register                 */
+    volatile uint32_t AFRH;             /**< GPIO port alternate function 
+                                            high register                 */
 
-    volatile uint32_t BRR;                  ///< GPIO port bit reset register
+    volatile uint32_t BRR;              ///< GPIO port bit reset register
 
 } gpio_struct_t;
 
-#define GPIOA (gpio_struct_t*) 0x48000000  ///< GPIOA base address struct 
-#define GPIOB (gpio_struct_t*) 0x48000400  ///< GPIOB base address struct
-#define GPIOC (gpio_struct_t*) 0x48000800  ///< GPIOC base address struct
-#define GPIOD (gpio_struct_t*) 0x48000C00  ///< GPIOD base address struct
-#define GPIOE (gpio_struct_t*) 0x48001000  ///< GPIOE base address struct
-#define GPIOF (gpio_struct_t*) 0x48001400  ///< GPIOG base address struct
-#define GPIOG (gpio_struct_t*) 0x48001800  ///< GPIOG base address struct
-#define GPIOH (gpio_struct_t*) 0x48001C00  ///< GPIOH base address struct
-#define GPIOI (gpio_struct_t*) 0x48002000  ///< GPIOI base address struct
+#define GPIOA (gpio_struct_t*) 0x48000000 ///< GPIOA base address struct 
+#define GPIOB (gpio_struct_t*) 0x48000400 ///< GPIOB base address struct
+#define GPIOC (gpio_struct_t*) 0x48000800 ///< GPIOC base address struct
+#define GPIOD (gpio_struct_t*) 0x48000C00 ///< GPIOD base address struct
+#define GPIOE (gpio_struct_t*) 0x48001000 ///< GPIOE base address struct
+#define GPIOF (gpio_struct_t*) 0x48001400 ///< GPIOG base address struct
+#define GPIOG (gpio_struct_t*) 0x48001800 ///< GPIOG base address struct
+#define GPIOH (gpio_struct_t*) 0x48001C00 ///< GPIOH base address struct
+#define GPIOI (gpio_struct_t*) 0x48002000 ///< GPIOI base address struct
 /**
  * @brief GPIO Pin Typedef
  */
 typedef struct
 {
-    gpio_struct_t* port;                    ///< Port (GPIOA, GPIOB...)
-    uint32_t pinNumber;                     ///< Pin  (1, 2, 3, ...)
+    gpio_struct_t* port;                ///< Port (GPIOA, GPIOB...)
+    uint32_t pinNumber;                 ///< Pin  (1, 2, 3, ...)
 
 } gpio_pin_struct_t;
 
@@ -204,22 +204,22 @@ typedef struct
 
 typedef enum
 {
-    GPIO_INPUT_MODE              = 0,    ///< GPIO to input mode
-    GPIO_OUTPUT_MODE             = 1,    ///< GPIO to output mode
-    GPIO_ALTERNATE_FUNCTION_MODE = 2,    ///< GPIO to alternate function mode
-    GPIO_ANALOG_MODE             = 3     ///< GPIO to analog function mode
+    GPIO_INPUT_MODE              = 0,   ///< GPIO to input mode
+    GPIO_OUTPUT_MODE             = 1,   ///< GPIO to output mode
+    GPIO_ALTERNATE_FUNCTION_MODE = 2,   ///< GPIO to alternate function mode
+    GPIO_ANALOG_MODE             = 3    ///< GPIO to analog function mode
 
 } gpio_pin_mode_t;
 
 typedef enum
 {
-    GPIO_LOW_SPEED       = 0,            /**< GPIO output to low speed 
+    GPIO_LOW_SPEED       = 0,           /**< GPIO output to low speed 
                                             (TODO: add max frequence)         */
-    GPIO_MEDIUM_SPEED    = 1,            /**< GPIO output to medium speed 
+    GPIO_MEDIUM_SPEED    = 1,           /**< GPIO output to medium speed 
                                             (TODO: add max frequence)         */
-    GPIO_HIGH_SPEED      = 2,            /**< GPIO output to high speed 
+    GPIO_HIGH_SPEED      = 2,           /**< GPIO output to high speed 
                                             (TODO: add max frequence)         */
-    GPIO_VERY_HIGH_SPEED = 3             /**< GPIO output to very high speed 
+    GPIO_VERY_HIGH_SPEED = 3            /**< GPIO output to very high speed 
                                             (TODO: add max frequence)         */
 
 } gpio_pin_speed_t;
