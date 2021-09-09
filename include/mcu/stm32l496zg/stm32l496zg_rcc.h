@@ -246,8 +246,11 @@ typedef enum
     GPIO_C_ENABLE_PORT = 2uL,           ///< GPIO Enable Selection: Port C
     GPIO_D_ENABLE_PORT = 3uL,           ///< GPIO Enable Selection: Port D
     GPIO_E_ENABLE_PORT = 4uL,           ///< GPIO Enable Selection: Port E
-    GPIO_H_ENABLE_PORT = 7uL            ///< GPIO Enable Selection: Port H
-
+    GPIO_F_ENABLE_PORT = 5uL,           ///< GPIO Enable Selection: Port F
+    GPIO_G_ENABLE_PORT = 6uL,           ///< GPIO Enable Selection: Port G
+    GPIO_H_ENABLE_PORT = 7uL,           ///< GPIO Enable Selection: Port H
+    GPIO_I_ENABLE_PORT = 8uL,           ///< GPIO Enable Selection: Port I
+		
 } gpio_enable_port_t;
 
 
