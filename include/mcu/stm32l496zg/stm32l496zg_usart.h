@@ -25,9 +25,10 @@ typedef struct
 
 } usart_struct_t;
 
-extern usart_struct_t*        const USART1;              ///< USART base address struct
-extern usart_struct_t*        const USART2;              ///< USART base address struct
-extern usart_struct_t*        const USART3;              ///< USART base address struct
+#define USART1 ((usart_struct_t*) 0x40013800) ///< USART 1 base address struct
+#define USART2 ((usart_struct_t*) 0x40004400) ///< USART 2 base address struct
+#define USART3 ((usart_struct_t*) 0x40004800) ///< USART 3 base address struct
+
 
 /*********************************************************************
  * 

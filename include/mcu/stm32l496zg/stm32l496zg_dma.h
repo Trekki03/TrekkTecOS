@@ -67,8 +67,8 @@ typedef struct
 	uint32_t CSELR; 					///< DMA chanel selection register
 } dma_struct_t;
 
-extern dma_struct_t* const DMA1;
-extern dma_struct_t* const DMA2;
+#define DMA1 ((dma_struct_t*) 0x40020000) ///< DMA1 base address
+#define DMA2 ((dma_struct_t*) 0x40020400) ///< DMA2 base address
 
 
 /*********************************************************************
