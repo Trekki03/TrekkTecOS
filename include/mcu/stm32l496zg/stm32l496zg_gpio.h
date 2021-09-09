@@ -19,7 +19,7 @@ typedef struct
     volatile uint32_t OTYPER;               ///< GPIO port output type register
     volatile uint32_t OSPEEDR;              ///< GPIO port output speed register
     volatile uint32_t PUPDR;                /**< GPIO port pull-up/pull-down 
-                                                register                      */
+                                                 register                      */
 
     volatile uint32_t IDR;                  ///< GPIO port input data register
     volatile uint32_t ODR;                  ///< GPIO port output data register
@@ -38,13 +38,15 @@ typedef struct
 
 } gpio_struct_t;
 
-extern gpio_struct_t*       const GPIOA;    ///< GPIOA base address struct 
-extern gpio_struct_t*       const GPIOB;    ///< GPIOB base address struct
-extern gpio_struct_t*       const GPIOC;    ///< GPIOC base address struct
-extern gpio_struct_t*       const GPIOD;    ///< GPIOD base address struct
-extern gpio_struct_t*       const GPIOE;    ///< GPIOE base address struct
-extern gpio_struct_t*       const GPIOH;    ///< GPIOH base address struct
-
+#define GPIOA (gpio_struct_t*) 0x48000000  ///< GPIOA base address struct 
+#define GPIOB (gpio_struct_t*) 0x48000400  ///< GPIOB base address struct
+#define GPIOC (gpio_struct_t*) 0x48000800  ///< GPIOC base address struct
+#define GPIOD (gpio_struct_t*) 0x48000C00  ///< GPIOD base address struct
+#define GPIOE (gpio_struct_t*) 0x48001000  ///< GPIOE base address struct
+#define GPIOF (gpio_struct_t*) 0x48001400  ///< GPIOG base address struct
+#define GPIOG (gpio_struct_t*) 0x48001800  ///< GPIOG base address struct
+#define GPIOH (gpio_struct_t*) 0x48001C00  ///< GPIOH base address struct
+#define GPIOI (gpio_struct_t*) 0x48002000  ///< GPIOI base address struct
 /**
  * @brief GPIO Pin Typedef
  */

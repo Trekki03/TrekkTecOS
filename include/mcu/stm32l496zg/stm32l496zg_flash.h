@@ -31,7 +31,7 @@ typedef struct
 
 } flash_struct_t;
 
-extern flash_struct_t*      const FLASH; ///< FLASH base address struct
+#define FLASH (flash_struct_t*)  0x40022000 ///< FLASH base address struct
 
 
 /******************* Typedefs *******************/
