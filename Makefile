@@ -1,9 +1,3 @@
-SOURCE_PATH = src/
-INCLUDE_PATH = include
-BUILD_PATH = build/
-LINKER_PATH = linkerscripts/
-STARTUP_PATH = startupCodes/
-
 #Change according to the controller:
 LINKER     = stm32l496zg.ld
 CONTROLLER = STM32L496ZG
@@ -14,6 +8,12 @@ CC = arm-none-eabi-gcc
 MACHINE = cortex-m4
 CFLAGS = -c -g -mcpu=$(MACHINE) -Wall -D$(CONTROLLER) -mthumb -std=gnu11 -O0 -I$(INCLUDE_PATH)
 LDFlAGS = -nostdlib -T $(LINKER_PATH)$(LINKER) -Wl,-Map=$(BUILD_PATH)final.map
+SOURCE_PATH = src/
+INCLUDE_PATH = include
+BUILD_PATH = build/
+LINKER_PATH = linkerscripts/
+STARTUP_PATH = startupCodes/
+
 
 all: $(BUILD_PATH)main.o $(BUILD_PATH)flash.o $(BUILD_PATH)gpio.o\
 	 $(BUILD_PATH)power.o $(BUILD_PATH)rcc.o $(BUILD_PATH)register.o\

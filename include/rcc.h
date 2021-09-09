@@ -10,13 +10,11 @@
 #define RCC_H
 
 // MCU specific includes
-#include "bool.h"
-#ifdef STM32L452RE
-#   include "mcu/stm32l452re.h"
-#endif
 #ifdef STM32L496ZG
 #   include "mcu/stm32l496zg.h"
 #endif
+
+#include "bool.h"
 
 /**
  * @brief selects, which source should be used for the SysClock
