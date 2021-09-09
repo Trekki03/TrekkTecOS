@@ -38,15 +38,15 @@ typedef struct
 
 } gpio_struct_t;
 
-#define GPIOA (gpio_struct_t*) 0x48000000 ///< GPIOA base address struct 
-#define GPIOB (gpio_struct_t*) 0x48000400 ///< GPIOB base address struct
-#define GPIOC (gpio_struct_t*) 0x48000800 ///< GPIOC base address struct
-#define GPIOD (gpio_struct_t*) 0x48000C00 ///< GPIOD base address struct
-#define GPIOE (gpio_struct_t*) 0x48001000 ///< GPIOE base address struct
-#define GPIOF (gpio_struct_t*) 0x48001400 ///< GPIOG base address struct
-#define GPIOG (gpio_struct_t*) 0x48001800 ///< GPIOG base address struct
-#define GPIOH (gpio_struct_t*) 0x48001C00 ///< GPIOH base address struct
-#define GPIOI (gpio_struct_t*) 0x48002000 ///< GPIOI base address struct
+#define GPIOA ((gpio_struct_t*) 0x48000000) ///< GPIOA base address struct 
+#define GPIOB ((gpio_struct_t*) 0x48000400) ///< GPIOB base address struct
+#define GPIOC ((gpio_struct_t*) 0x48000800) ///< GPIOC base address struct
+#define GPIOD ((gpio_struct_t*) 0x48000C00) ///< GPIOD base address struct
+#define GPIOE ((gpio_struct_t*) 0x48001000) ///< GPIOE base address struct
+#define GPIOF ((gpio_struct_t*) 0x48001400) ///< GPIOG base address struct
+#define GPIOG ((gpio_struct_t*) 0x48001800) ///< GPIOG base address struct
+#define GPIOH ((gpio_struct_t*) 0x48001C00) ///< GPIOH base address struct
+#define GPIOI ((gpio_struct_t*) 0x48002000) ///< GPIOI base address struct
 /**
  * @brief GPIO Pin Typedef
  */

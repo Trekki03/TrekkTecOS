@@ -53,7 +53,7 @@ typedef struct
                                             register                          */
 } pwr_struct_t;
 
-#define PWR (pwr_struct_t*)  0x40007000 ///< PWR base address struct
+#define PWR ((pwr_struct_t*) 0x40007000) ///< PWR base address struct
 
 
 /******************* Typedefs *******************/

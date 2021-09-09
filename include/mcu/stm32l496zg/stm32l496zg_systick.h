@@ -21,7 +21,7 @@ typedef struct
     volatile uint32_t CALIB;            ///< SysTick calibration value register
 } systick_struct_t;
 
-#define STK (systick_struct_t*) 0xE000E010; ///< SysTick base address struct
+#define STK ((systick_struct_t*) 0xE000E010) ///< SysTick base address struct
 
 
 #endif /* STM32L496ZG_SYSTICK_H */

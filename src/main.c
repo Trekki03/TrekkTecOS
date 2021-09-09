@@ -42,9 +42,8 @@ int main(void)
     InitalSetup();
     setup();
 
-    while (1)
+    for(;;)
     {
-
         loop();
     }
     return 0;

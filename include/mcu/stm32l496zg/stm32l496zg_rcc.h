@@ -72,7 +72,7 @@ typedef struct
                                             configure register                */
 } rcc_struct_t;
 
-#define RCC (rcc_struct_t*)  0x40021000 ///< RCC base address struct  
+#define RCC ((rcc_struct_t*) 0x40021000) ///< RCC base address struct  
 
 
 /******************* Typedefs *******************/
