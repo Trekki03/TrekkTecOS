@@ -19,7 +19,7 @@
  * 
  * @param scale scale which should be set
  */
-void SetVoltageRegulatorScale(volate_regulator_scale_t scale);
+void Power_SetVoltageRegulatorScale (volate_regulator_scale_t scale);
 
 #endif /* POWER_H */
 

@@ -9,7 +9,6 @@
 #ifndef STM32L496ZG_H
 #define STM32L496ZG_H
 
-//TODO CREATE stm32l452re File when finished
 #include "stm32l496zg/stm32l496zg_rcc.h"
 #include "stm32l496zg/stm32l496zg_flash.h"
 #include "stm32l496zg/stm32l496zg_gpio.h"

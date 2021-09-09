@@ -21,28 +21,28 @@
  * 
  * @param onOff data cache on or off
  */
-void ToggleDataCache(bool onOff);
+void Flash_ToggleDataCache (bool b_onOff);
 
 /**
  * @brief enables or disables the instruction cache
  * 
  * @param onOff instruction cache on or off
  */
-void ToggleInstructionCache(bool onOff);
+void Flash_ToggleInstructionCache (bool b_onOff);
 
 /**
  * @brief enables or disables the prefetch buffer
  * 
  * @param onOff prefetch buffer on or off
  */
-void TogglePrefetchBuffer(bool onOff);
+void Flash_TogglePrefetchBuffer (bool b_onOff);
 
 /**
  * @brief Set the Flash Latency
  * 
  * @param latency flash latency which should be set
  */
-void SetFlashLatency(flash_latency_value_t latency);
+void Flash_SetFlashLatency (flash_latency_value_t latency);
 
 #endif /* FLASH_H */
 
