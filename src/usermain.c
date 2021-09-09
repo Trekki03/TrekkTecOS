@@ -107,16 +107,15 @@ void DMA1_CH4_Handler(void)
 	}
 }
 
-
 void loop()
 {
 	static uint32_t lastTime = 0;
 	static bool lastState = off;
-	if((lastTime - micro_ticks) > 40)
+	if((Systick_GetMicroTicks() - lastTime) > 40)
 	{
 		TogglePinOutput(GPIOG_0, !lastState);
 		lastState = !lastState;
-		lastTime = micro_ticks;
+		lastTime = Systick_GetMicroTicks();
 	}
 	
 	SendMessage("Test", 4);

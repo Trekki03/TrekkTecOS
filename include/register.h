@@ -1,12 +1,9 @@
 /**
  * @file register.h
- * @author Trekki03 (trekki03_yt@yahoo.com)
+ * 
  * @brief contains functions for manipulating registers
- * @version 0.1
- * @date 2021-07-31
  * 
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef REGISTER_H
@@ -23,7 +20,7 @@
  * @param bitSize bit length of the value e.g. if the value is 5 (0b101), the length is 3
  * @param offset offset from the beginning of the register
  */
-void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, uint32_t bitSize, uint32_t offset);
+void Register_WriteIntoRegister (volatile uint32_t* const registerAddr, uint32_t value, uint32_t bitSize, uint32_t offset);
 
 /**
  * @brief Read a value of an register
@@ -32,7 +29,8 @@ void WriteIntoRegister( volatile uint32_t* const registerAddr, uint32_t value, u
  * @param size bit length of the value e.g. if the value is 5 (0b101), the length is 3
  * @param offset offset from the beginning of the register where the value is located
  */
-uint32_t ReadRegister( volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
-
+uint32_t Register_ReadRegister (volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset);
 
 #endif /* REGISTER_H */
+
+/* END OF FILE */

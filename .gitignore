@@ -1,7 +1,9 @@
-compile_commands.json
-/.cache
+/trekktecos-cppcheck-build-dir
 /build
 /.vscode/settings.json
 WaveformsWin.dwf3work
 *.jdebug
 *.jdebug.user
+compile_commands.json
+*.cppcheck
+/.cache
