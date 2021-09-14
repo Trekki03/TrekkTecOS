@@ -17,7 +17,7 @@ void Register_WriteIntoRegister (
 }
 
 uint32_t Register_ReadRegister ( 
-    volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset
+    const volatile uint32_t* const registerAddr, uint32_t size, uint32_t offset
 )
 {
     uint32_t value = *registerAddr; 

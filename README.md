@@ -14,8 +14,8 @@ Only a small part of the features exists yet. And the features that exist are no
 | Nucleo64 STM32L452RE  |  stm32l452re.ld |      STM32L452RE    | stm32l452re_startup |  not yet   | next target          | 
 
 ## How to get started
-All you need to do is download the repository and execute the make file. Your code goes into the usermain.c or how ever you want to call you main file.\
+All you need to do is download the repository and execute the make file. Your code goes into the usermain.c or however you want to call you main file.\
 **IMPORTANT** is, that you don't create your own main function, you only have to create a setup and a loop function. Everything in the setup function will be exectued after a default setup and befor the while(1) loop. Even though there is a default setup, which lets the mcu run at 80MHz, you can change these values in the setup function. Everything in the loop function will be executed repeatedly.\
-You also have to include the TrekkTecOS.h header file in your usermain file and you have to set the correct define for your device in the make file (see table above).\
+You also have to include the TrekkTecOS.h header file in your usermain file, and you have to set the correct define for your device in the make file (see table above).\
 Later on, the framework will be in the form of a library, but for now on you have to use it this way.\
 **Be warned, at this point of development, the framework isn't really useable. But if you are interested, don't hesitate to star the repo.**

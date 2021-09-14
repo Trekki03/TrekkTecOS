@@ -1,9 +1,10 @@
-/trekktecos-cppcheck-build-dir
-/build
-/.vscode/settings.json
 WaveformsWin.dwf3work
 *.jdebug
 *.jdebug.user
-compile_commands.json
-*.cppcheck
-/.cache
+/cmake-build-debug/
+/.idea/.name
+/.idea/misc.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/TrekkTecOS.iml
+/.idea/modules.xml
+/.idea/vcs.xml

@@ -209,7 +209,10 @@ uint32_t isr_vectors[] __attribute__ ((section (".isr_vectors"))) =
 
 void __attribute__ ((interrupt)) Common_Handler_isr(void)
 {
-	while(1);
+	for(;;)
+    {
+        //Empty
+    };
 }
 
 

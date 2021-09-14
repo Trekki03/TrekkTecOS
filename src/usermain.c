@@ -88,14 +88,12 @@ void DMA1_CH4_Handler_isr(void)
 void loop()
 {
 	static uint32_t lastTime = 0;
-	static bool lastState = off;
-	if((Systick_GetMicroTicks() - lastTime) > 40)
+	if((Systick_GetMilliTicks() - lastTime) > 100)
 	{
-		Gpio_TogglePinOutput(GPIOG_0, !lastState);
-		lastState = !lastState;
-		lastTime = Systick_GetMicroTicks();
+        SendMessage("Test", 4);
+        lastTime = Systick_GetMilliTicks();
 	}
 	
-	SendMessage("Test", 4);
+
 
 }

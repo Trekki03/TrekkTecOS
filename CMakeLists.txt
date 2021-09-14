@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.11.1)
+
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+set(CMAKE_CROSSCOMPILING 1)
+
+set(GCC_PATH /home/tobias/Apps/gcc-arm-none-eabi-10.3-2021.07/bin)
+set(CMAKE_C_COMPILER ${GCC_PATH}/arm-none-eabi-gcc CACHE PATH "" FORCE)
+SET (CMAKE_C_COMPILER_WORKS 1)
+SET (CMAKE_CXX_COMPILER_WORKS 1)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+set(CMAKE_C_FLAGS " -mcpu=cortex-m4 -Wall -mthumb")
+set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
+set(CMAKE_EXE_LINKER_FLAGS "-nostdlib -T ../linkerscripts/stm32l496zg.ld -Wl,-Map=final.map")
+
+set(SOURCES src/flash.c src/gpio.c src/main.c src/power.c src/rcc.c src/register.c src/systick.c src/usermain.c startupCodes/stm32l496zg_startup.c)
+add_definitions(-DSTM32L496ZG)
+project(TrekkTecOs.elf)
+include_directories(include)
+add_executable(${PROJECT_NAME} ${SOURCES})
