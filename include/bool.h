@@ -13,7 +13,7 @@
  * @typedef bool
  * @brief a simple boolean type
  */
-typedef int bool;
+typedef uint32_t bool;
 
 /**
  * @brief true value for bool (1)

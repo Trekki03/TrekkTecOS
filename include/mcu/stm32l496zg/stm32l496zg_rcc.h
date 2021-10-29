@@ -249,9 +249,15 @@ typedef enum
     GPIO_F_ENABLE_PORT = 5uL,           ///< GPIO Enable Selection: Port F
     GPIO_G_ENABLE_PORT = 6uL,           ///< GPIO Enable Selection: Port G
     GPIO_H_ENABLE_PORT = 7uL,           ///< GPIO Enable Selection: Port H
-    GPIO_I_ENABLE_PORT = 8uL,           ///< GPIO Enable Selection: Port I
+    GPIO_I_ENABLE_PORT = 8uL            ///< GPIO Enable Selection: Port I
 		
 } gpio_enable_port_t;
+
+typedef enum
+{
+    DMA_1_ENABLE_BIT = 0,               ///< AHB1ENR DMA 1 enable bit
+    DMA_2_ENABLE_BIT = 1                ///< AHB1ENR DMA 2 enable bit
+} dma_clock_enable_bit_t;
 
 
 /******************* Values for functions *******************/
@@ -360,6 +366,12 @@ typedef enum
 #define TOGGLE_GPIO_CLOCK_VALUE_ON 1uL
 #define TOGGLE_GPIO_CLOCK_VALUE_OFF 0uL
 #define TOGGLE_GPIO_CLOCK_VALUE_LENGTH 1uL
+
+//Toggle DMA Clock
+#define TOGGLE_DMA_CLOCK_REGISTER_ADDR &(RCC->AHB1ENR)
+#define TOGGLE_DMA_CLOCK_VALUE_ON 1uL
+#define TOGGLE_DMA_CLOCK_VALUE_OFF 0uL
+#define TOGGLE_DMA_CLOCK_VALUE_LENGTH 1uL
 
 #endif /* STM32L496ZG_RCC_H */
 

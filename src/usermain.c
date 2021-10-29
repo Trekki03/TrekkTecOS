@@ -1,6 +1,3 @@
-#include "mcu/stm32l496zg/stm32l496zg_dma.h"
-#include "mcu/stm32l496zg/stm32l496zg_usart.h"
-#include "register.h"
 #include "trekktecos.h"
 #include <stdint.h>
 
@@ -9,19 +6,18 @@ static char buffer[128] = {0};
 void setup()
 {
 
-	//DMA
-	Register_WriteIntoRegister(&(RCC->AHB1ENR), 0b1, 1, 0); //Enable DMA1 Clock
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b1, 1, 1);   //Enable Transfer Complete Interrupt 
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b1, 1, 4);   //Direction Memory to Data
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b0, 1, 5);   //No circular mode
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b0, 1, 6);   //No peripheral increment
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b1, 1, 7);   //Memory increment
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b00, 2, 8);  //peripheral size 8bit
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b01, 2, 12); //medium priority
-	Register_WriteIntoRegister(&(DMA1->CCR4), 0b0, 1, 14);  //No memory-to-memory-mode  
-	Register_WriteIntoRegister(&(DMA1->CSELR), 0b0010, 4, 12);
-	Register_WriteIntoRegister(&(DMA1->CPAR4), (uint32_t) &(USART1->TDR), 32, 0); //Set Address of USART1-TDR
-	Register_WriteIntoRegister(&(DMA1->CMAR4), (uint32_t) &buffer, 32, 0); //Set DMA Memory Address
+    Rcc_ToggleDmaClock (DMA_1_ENABLE_BIT, on); // Enable DMA Clock
+    Dma_ToggleTransferCompleteInterrupt(1, 4, on); //Enable Transfer Complete Interrupt
+    Dma_SetTransferDirection(1, 4, DIRECTION_READ_FROM_MEMORY);   //Direction Memory to Data
+    Dma_ToggleCircularMode(1, 4, off); // No circular Mode
+    Dma_TogglePeripheralIncrement(1, 4, off);   //No peripheral increment
+    Dma_ToggleMemoryIncrement(1, 4, on); //Memory increment
+    Dma_SetPeripheralSize(1, 4, PERIPHERAL_SIZE_8_BIT); //peripheral size 8bit
+    Dma_SetChannelPriority(1,4,CHANNEL_PRIORITY_MEDIUM); //medium priority
+    Dma_ToggleMemToMemMode(1,4,false); // No MemToMem
+    Dma_SetDmaChannelRequest(DMA1,4,DMA_1_CHANNEL_4_REQUEST_2); // USART1_TX Request
+    Dma_SetPeripheralAddress(1, 4, &(USART1->TDR));
+    Dma_SetMemoryAddress(1, 4, (uint32_t*) &buffer);
 
 
 	//USART1
@@ -45,18 +41,6 @@ void setup()
 	Register_WriteIntoRegister((uint32_t*) 0xE000E100, 0b1, 1, 14);
     Systick_Delay(100);
 
-}
-
-uint32_t GetSizeOfString(const char* str)
-{
-	uint32_t counter = 0;
-	
-	while(*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return counter;
 }
 
 static bool sended = true;

@@ -1,0 +1,4 @@
+h
+loadbin /Users/tobias/Dev/Microcontroller/TrekkTecOS/cmake-build-debug/TrekkTecOs.bin, 0x08000000
+r
+q

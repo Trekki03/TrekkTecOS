@@ -182,3 +182,13 @@ void Rcc_ToggleGpioClock(gpio_enable_port_t port, bool b_onOff)
         TOGGLE_GPIO_CLOCK_VALUE_LENGTH, port
     );
 }
+
+void Rcc_ToggleDmaClock (dma_clock_enable_bit_t dma_bit, bool b_onOff)
+{
+    uint32_t value = b_onOff ?
+        TOGGLE_DMA_CLOCK_VALUE_ON : TOGGLE_DMA_CLOCK_VALUE_OFF;
+    Register_WriteIntoRegister (
+        TOGGLE_DMA_CLOCK_REGISTER_ADDR, value,
+        TOGGLE_DMA_CLOCK_VALUE_LENGTH, dma_bit
+    );
+}
