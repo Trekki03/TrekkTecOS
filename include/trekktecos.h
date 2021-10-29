@@ -16,6 +16,7 @@
 #include "bool.h"
 #include "register.h"
 #include "systick.h"
+#include "dma.h"
 
 #endif /* TREKKTECOS_H */
 

@@ -129,6 +129,12 @@ void Rcc_TogglePowerInterfaceClock (bool b_onOff);
  */
 void Rcc_ToggleGpioClock (gpio_enable_port_t port, bool b_onOff);
 
+/**
+ * @brief enables or disables an dma clock.
+ * @param dma dma clock to toggle
+ * @param b_onOff dma clock on or off
+ */
+void Rcc_ToggleDmaClock (dma_clock_enable_bit_t dma, bool b_onOff);
 #endif /* RCC_H */
 
 /* END OF FILE */
