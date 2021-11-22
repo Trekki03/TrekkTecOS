@@ -18,7 +18,7 @@ set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
 set(CMAKE_EXE_LINKER_FLAGS "-nostdlib -T ../linkerscripts/stm32l496zg.ld -Wl,-Map=final.map")
 
 set(SOURCES src/flash.c src/gpio.c src/main.c src/power.c src/rcc.c src/register.c src/systick.c
-            src/usermain.c startupCodes/stm32l496zg_startup.c src/dma.c src/mcu/stm32l496zg/stm32l496zg_dma.c)
+            src/usermain.c startupCodes/stm32l496zg_startup.c src/dma.c src/mcu/stm32l496zg/stm32l496zg_dma.c src/mcu/stm32l496zg/stm32l496zg_rcc.c)
 add_definitions(-DSTM32L496ZG)
 
 project(TrekkTecOs)

@@ -3,6 +3,21 @@
 
 //TODO Use Read Register in while loops
 
+//--------------------------------------
+// Helper Functions
+
+uint32_t* Local_GetUartClockToggleRegister(uint8_t uart)
+{
+    return (uint32_t*) uartToggleMap[uart-1][0];
+}
+
+uint32_t Local_GetUartClockToggleBitOffset(uint32_t uart)
+{
+    return uartToggleMap[uart-1][1];
+}
+
+//--------------------------------------
+// User Functions
 void Rcc_SetSystemClockSource (system_clock_source_t source)
 {
     Register_WriteIntoRegister (
@@ -173,7 +188,7 @@ void Rcc_TogglePowerInterfaceClock (bool b_onOff)
     );
 }
 
-void Rcc_ToggleGpioClock(gpio_enable_port_t port, bool b_onOff)
+void Rcc_ToggleGpioClock (gpio_enable_port_t port, bool b_onOff)
 {
     uint32_t value = b_onOff ? 
         TOGGLE_GPIO_CLOCK_VALUE_ON : TOGGLE_GPIO_CLOCK_VALUE_OFF;
@@ -192,3 +207,16 @@ void Rcc_ToggleDmaClock (dma_clock_enable_bit_t dma_bit, bool b_onOff)
         TOGGLE_DMA_CLOCK_VALUE_LENGTH, dma_bit
     );
 }
+
+void Rcc_ToggleUartClock (int uart_number, bool b_onOff)
+{
+    uint32_t value = b_onOff ?
+        TOGGLE_UART_CLOCK_VALUE_ON : TOGGLE_UART_CLOCK_VALUE_OFF;
+    uint32_t* toggleRegister = Local_GetUartClockToggleRegister(uart_number);
+    uint32_t toggleBitOffset = Local_GetUartClockToggleBitOffset(uart_number);
+    Register_WriteIntoRegister (
+        toggleRegister, value, TOGGLE_UART_CLOCK_VALUE_LENGTH, toggleBitOffset
+    );
+
+}
+

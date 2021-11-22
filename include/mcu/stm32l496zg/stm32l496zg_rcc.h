@@ -259,6 +259,16 @@ typedef enum
     DMA_2_ENABLE_BIT = 1                ///< AHB1ENR DMA 2 enable bit
 } dma_clock_enable_bit_t;
 
+typedef struct
+{
+    uint32_t* toggleRegister;           //register location of toggle bit
+    uint32_t  toggleBitNumber;          //position of toggle bit in register
+} usart_clock_toggle_register_bit;
+
+/******************* Extern Varaibles ***********************/
+
+extern uint32_t uartToggleMap[5][2];
+
 
 /******************* Values for functions *******************/
 
@@ -372,6 +382,11 @@ typedef enum
 #define TOGGLE_DMA_CLOCK_VALUE_ON 1uL
 #define TOGGLE_DMA_CLOCK_VALUE_OFF 0uL
 #define TOGGLE_DMA_CLOCK_VALUE_LENGTH 1uL
+
+//Toggle UART Clock
+#define TOGGLE_UART_CLOCK_VALUE_ON 1uL
+#define TOGGLE_UART_CLOCK_VALUE_OFF 0uL
+#define TOGGLE_UART_CLOCK_VALUE_LENGTH 1uL
 
 #endif /* STM32L496ZG_RCC_H */
 

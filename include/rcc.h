@@ -135,6 +135,14 @@ void Rcc_ToggleGpioClock (gpio_enable_port_t port, bool b_onOff);
  * @param b_onOff dma clock on or off
  */
 void Rcc_ToggleDmaClock (dma_clock_enable_bit_t dma, bool b_onOff);
+
+/**
+ * @brief enables or disables an uart clock.
+ * @param dma uart clock to toggle (starting with 1)
+ * @param b_onOff uart clock on or off
+ */
+void Rcc_ToggleUartClock (int uart_number, bool b_onOff);
+
 #endif /* RCC_H */
 
 /* END OF FILE */
