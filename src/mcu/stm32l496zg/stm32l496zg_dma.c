@@ -11,11 +11,6 @@
         { ((uint32_t*) &(DMA1->CCR7)), ((uint32_t*) &(DMA2->CCR7)) }
 };
 
-uint32_t* GetCcrRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber)
-{
-    return dma_ccr_channels[dmaChannelNumber-1][dmaNumber-1];
-}
-
 uint32_t* const dma_cpar_channels[7][2] =
 {
         { ((uint32_t*) &(DMA1->CPAR1)), ((uint32_t*) &(DMA2->CPAR1)) },
@@ -26,12 +21,6 @@ uint32_t* const dma_cpar_channels[7][2] =
         { ((uint32_t*) &(DMA1->CPAR6)), ((uint32_t*) &(DMA2->CPAR6)) },
         { ((uint32_t*) &(DMA1->CPAR7)), ((uint32_t*) &(DMA2->CPAR7)) }
 };
-
-uint32_t* GetCparRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber)
-{
-    return dma_cpar_channels[dmaChannelNumber-1][dmaNumber-1];
-}
-
 
 uint32_t* const dma_cmar_channels[7][2] =
         {
@@ -44,7 +33,3 @@ uint32_t* const dma_cmar_channels[7][2] =
                 { ((uint32_t*) &(DMA1->CMAR7)), ((uint32_t*) &(DMA2->CMAR7)) }
         };
 
-uint32_t* GetCmarRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber)
-{
-    return dma_cmar_channels[dmaChannelNumber-1][dmaNumber-1];
-}

@@ -73,7 +73,7 @@ typedef struct
 
 /*********************************************************************
  * 
- * TypeDefs / Data
+ * TypeDefs
  * 
  ********************************************************************/
 
@@ -272,33 +272,15 @@ typedef enum
 
 /*********************************************************************
  *
- *  Functions
+ * Vars
  *
  ********************************************************************/
 
-/**
- * @brief return the corresponding CCR register for a dma/channel combination
- * @param dmaNumber selected dma number
- * @param dmaChannelNumber selected dma channel
- * @return CCR register pointer for dma/channel combination
- */
-uint32_t* GetCcrRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber);
+extern uint32_t* const dma_ccr_channels[7][2];
+extern uint32_t* const dma_cpar_channels[7][2];
+extern uint32_t* const dma_cmar_channels[7][2];
 
-/**
- * @brief return the corresponding CPAR register for a dma/channel combination
- * @param dmaNumber selected dma number
- * @param dmaChannelNumber selected dma channel
- * @return CPAR register pointer for dma/channel combination
- */
-uint32_t* GetCparRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber);
 
-/**
- * @brief return the corresponding CMAR register for a dma/channel combination
- * @param dmaNumber selected dma number
- * @param dmaChannelNumber selected dma channel
- * @return CMAR register pointer for dma/channel combination
- */
-uint32_t* GetCmarRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber);
 /*********************************************************************
  * 
  * Values for functions
