@@ -265,10 +265,11 @@ typedef struct
     uint32_t  toggleBitNumber;          //position of toggle bit in register
 } usart_clock_toggle_register_bit;
 
+
+
 /******************* Extern Varaibles ***********************/
 
 extern uint32_t uartToggleMap[5][2];
-
 
 /******************* Values for functions *******************/
 

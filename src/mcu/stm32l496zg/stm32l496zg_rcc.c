@@ -9,3 +9,5 @@ uint32_t uartToggleMap[5][2] =
         { (uint32_t) &(RCC->APB1ENR1), 20uL}
 };
 
+
+

@@ -17,6 +17,7 @@
 #include "register.h"
 #include "systick.h"
 #include "dma.h"
+#include "uart.h"
 
 #endif /* TREKKTECOS_H */
 

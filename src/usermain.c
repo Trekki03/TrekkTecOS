@@ -21,9 +21,8 @@ void setup()
 
 
 	//USART1
-    //Register_WriteIntoRegister(&(RCC->APB2ENR), 1, 1, 14);   //Enable USART1 clock
-    Rcc_ToggleUartClock(1, on);
-    Register_WriteIntoRegister(&(USART1->CR1), 0b00, 2, 28); //Set bit length to 8
+    Rcc_ToggleUartClock(1, on); //Enable USART1 clock
+    Uart_SetWordLength(1, UART_WORD_LENGTH_8_BITS); //Set bit length to 8
     Register_WriteIntoRegister(&(USART1->CR1), 0, 1, 15);    //Set oversampling to 16
     Register_WriteIntoRegister(&(USART1->BRR), 8334, 16, 0); //Set baude rate to 9600 (80000000/9600 = 8334)
     Register_WriteIntoRegister(&(USART1->CR2), 0b00, 2, 12); //Set 1 Stop Bits

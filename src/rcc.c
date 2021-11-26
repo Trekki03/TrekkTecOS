@@ -217,6 +217,4 @@ void Rcc_ToggleUartClock (int uart_number, bool b_onOff)
     Register_WriteIntoRegister (
         toggleRegister, value, TOGGLE_UART_CLOCK_VALUE_LENGTH, toggleBitOffset
     );
-
 }
-
