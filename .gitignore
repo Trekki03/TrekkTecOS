@@ -2,6 +2,8 @@ WaveformsWin.dwf3work
 *.jdebug
 *.jdebug.user
 /cmake-build-debug/
+/build/
+/.vscode/
 /.idea/*
 .DS_Store
 /Doc
