@@ -23,13 +23,12 @@ void setup()
 	//USART1
     Rcc_ToggleUartClock(1, on); //Enable USART1 clock
     Uart_SetWordLength(1, UART_WORD_LENGTH_8_BITS); //Set bit length to 8
-    Register_WriteIntoRegister(&(USART1->CR1), 0, 1, 15);    //Set oversampling to 16
-    Register_WriteIntoRegister(&(USART1->BRR), 8334, 16, 0); //Set baude rate to 9600 (80000000/9600 = 8334)
-    Register_WriteIntoRegister(&(USART1->CR2), 0b00, 2, 12); //Set 1 Stop Bits
-	Register_WriteIntoRegister(&(USART1->CR3), 0b1, 1, 7); 	//Enable DMA Transmit
-    Register_WriteIntoRegister(&(USART1->CR1), 0b1, 1, 0);   //Enable USART1
-    Register_WriteIntoRegister(&(USART1->CR1), 0b1, 1, 3);   //Set TE to 1    
-	
+	Uart_SetOversamling(1, UART_OVERSAMLING_MODE_16);
+    Uart_SetBaudrate(1, 80000000, 115200);
+    Uart_SetStopBits(1, UART_STOP_BIT_COUNT_1);
+    Uart_ToggleDmaTransmit(1, on);
+    Uart_ToggleUart(1, on);
+    Uart_ToggleTransmitter(1, on);	
 
 	//Pins for check
     Gpio_SetPinMode(GPIOB_6, GPIO_ALTERNATE_FUNCTION_MODE);  //Set PB6 to AF
@@ -74,7 +73,7 @@ void loop()
 	static uint32_t lastTime = 0;
 	if((Systick_GetMilliTicks() - lastTime) > 100)
 	{
-        SendMessage("Test", 4);
+        SendMessage("Hallo Welt!", 11);
         lastTime = Systick_GetMilliTicks();
 	}
 	

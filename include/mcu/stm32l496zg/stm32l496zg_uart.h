@@ -43,9 +43,25 @@ typedef enum
     UART_WORD_LENGTH_7_BITS = 0b10     ///< UART Word Length: 7 bits
 } uart_word_length_t;
 
+typedef enum
+{
+    UART_OVERSAMLING_MODE_8 = 0b0,  ///< UART Oversampling by 8
+    UART_OVERSAMLING_MODE_16 = 0b1  ///< UART Oversampling by 16
+} uart_oversamling_mode_t;
+
+typedef enum
+{
+    UART_STOP_BIT_COUNT_1 = 0b00,          ///< UART 1 stop bit
+    UART_STOP_BIT_COUNT_0_POINT_5 = 0b01,  ///< UART 1 stop bit
+    UART_STOP_BIT_COUNT_2 = 0b10,          ///< UART 1 stop bit
+    UART_STOP_BIT_COUNT_1_POINT_5 = 0b11   ///< UART 1 stop bit
+} uart_stop_bit_count_t;
+
 // *************************** Vars ******************************
 
 extern uint32_t* uartCrRegisterMap[5][3];
+extern uint32_t* uartBRRegisterMap[5]; 
+
 /*********************************************************************
  * 
  * Values for functions
@@ -55,5 +71,28 @@ extern uint32_t* uartCrRegisterMap[5][3];
 #define UART_SET_WORD_LENGTH_VALUE_LENGTH 2
 #define UART_SET_WORD_LENGTH_OFFSET 28
 
+// Set Oversamling Mode
+#define UART_SET_OVERSAMLING_MODE_VALUE_LENGTH 1
+#define UART_SET_OVERSAMLING_MODE_OFFSET 15
+
+// Set Baudrate
+#define UART_SET_BAUDRATE_VALUE_LENGTH 16
+#define UART_SET_BAUDRATE_OFFSET 0
+
+// Set Stop bits
+#define UART_SET_STOP_BIT_VALUE_LENGTH 2
+#define UART_SET_STOP_BIT_OFFSET 12
+
+// Toggle DMA Transmit
+#define UART_TOGGLE_DMA_TRANSMIT_VALUE_LENGTH 1
+#define UART_TOGGLE_DMA_TRANSMIT_OFFSET 7
+
+// Toggle UART
+#define UART_TOGGLE_UART_VALUE_LENGTH 1
+#define UART_TOGGLE_UART_OFFSET 0 
+
+// Toggle Transmitter
+#define UART_TOGGLE_TRANSMITTER_VALUE_LENGTH 1
+#define UART_TOGGLE_TRANSMITTER_OFFSET 3
 
 #endif /* STM32L496ZG_UART_H */
