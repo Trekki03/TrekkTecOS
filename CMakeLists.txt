@@ -6,8 +6,15 @@ set(CMAKE_CROSSCOMPILING 1)
 
 set(CMAKE_BUILD_TYPE Debug)
 
-set(GCC_PATH /Users/tobias/Dev/Microcontroller/ARM/bin)
-set(CMAKE_C_COMPILER ${GCC_PATH}/arm-none-eabi-gcc CACHE PATH "" FORCE)
+set(OS "Windows")
+
+if(OS STREQUAL "Mac")
+    set(GCC_PATH "/Users/tobias/Dev/Microcontroller/ARM/bin")
+elseif(OS STREQUAL "Windows")
+    set(GCC_PATH "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.3 rel1/bin")
+endif()
+
+set(CMAKE_C_COMPILER ${GCC_PATH}/arm-none-eabi-gcc.exe CACHE PATH "" FORCE)
 
 SET (CMAKE_C_COMPILER_WORKS 1)
 SET (CMAKE_CXX_COMPILER_WORKS 1)
