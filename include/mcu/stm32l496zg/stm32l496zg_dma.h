@@ -279,6 +279,9 @@ typedef enum
 extern uint32_t* const dma_ccr_channels[7][2];
 extern uint32_t* const dma_cpar_channels[7][2];
 extern uint32_t* const dma_cmar_channels[7][2];
+extern uint32_t const uart_send_dma_channel_requestcode_map[5][3];
+extern volatile uint32_t* const uart_send_data_register_addr_map[5];
+extern volatile uint32_t* uart_send_buffer_addr_map[5];
 
 
 /*********************************************************************

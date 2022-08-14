@@ -107,5 +107,11 @@ void Dma_SetPeripheralAddress(uint32_t dmaNumber, uint32_t dmaChannelNumber, vol
  */
 void Dma_SetMemoryAddress(uint32_t dmaNumber, uint32_t dmaChannelNumber, volatile uint32_t * memoryAddress);
 
+/**
+ * @brief setsup dma for usage with u(s)art
+ * 
+ * @param usartNumber 1-5
+ */
+void Dma_SetupDMAForU_s_art(uint32_t usartNumber);
 
 #endif /* DMA_H */

@@ -1,24 +1,11 @@
 #include "trekktecos.h"
 #include <stdint.h>
 
-static char buffer[128] = {0};
+//static char buffer[128] = {0};
 
 void setup()
 {
-
-    Rcc_ToggleDmaClock (DMA_1_ENABLE_BIT, on); // Enable DMA Clock
-    Dma_ToggleTransferCompleteInterrupt(1, 4, on); //Enable Transfer Complete Interrupt
-    Dma_SetTransferDirection(1, 4, DIRECTION_READ_FROM_MEMORY);   //Direction Memory to Data
-    Dma_ToggleCircularMode(1, 4, off); // No circular Mode
-    Dma_TogglePeripheralIncrement(1, 4, off);   //No peripheral increment
-    Dma_ToggleMemoryIncrement(1, 4, on); //Memory increment
-    Dma_SetPeripheralSize(1, 4, PERIPHERAL_SIZE_8_BIT); //peripheral size 8bit
-    Dma_SetChannelPriority(1,4,CHANNEL_PRIORITY_MEDIUM); //medium priority
-    Dma_ToggleMemToMemMode(1,4,false); // No MemToMem
-    Dma_SetDmaChannelRequest(DMA1,4,DMA_1_CHANNEL_4_REQUEST_2); // USART1_TX Request
-    Dma_SetPeripheralAddress(1, 4, &(USART1->TDR));
-    Dma_SetMemoryAddress(1, 4, (uint32_t*) &buffer);
-
+    Dma_SetupDMAForU_s_art(1);
 
 	//USART1
     Rcc_ToggleUartClock(1, on); //Enable USART1 clock
@@ -32,9 +19,8 @@ void setup()
 
 	//Pins for check
     Gpio_SetPinMode(GPIOB_6, GPIO_ALTERNATE_FUNCTION_MODE);  //Set PB6 to AF
-    Register_WriteIntoRegister(&(GPIOB->AFRL), 0b0111, 4, 24);   //Set PB6 to AF7
-	Gpio_SetPinMode(GPIOG_0, GPIO_OUTPUT_MODE);
-	Gpio_SetPinSpeed(GPIOG_0, GPIO_VERY_HIGH_SPEED);
+    Gpio_SetAlternateFunction(GPIOB_6, GPIO_ALTERNATE_FUNCTION_7);
+    //Register_WriteIntoRegister(&(GPIOB->AFRL), 0b0111, 4, 24);   //Set PB6 to AF7
 
 	//Initial Delay
 	Register_WriteIntoRegister((uint32_t*) 0xE000E100, 0b1, 1, 14);
@@ -50,7 +36,8 @@ void SendMessage(const char* message, uint32_t size)
 	{
 		for (uint32_t i = 0; i < size; i++) 
 		{
-			buffer[i] = message[i];
+            ((char*)uart_send_buffer_addr_map[0])[i] = message[i];
+			//buffer[i] = message[i];
 		}
 		Register_WriteIntoRegister(&(DMA1->CNDTR4),size, 16, 0); //Set String length in DMA
 		Register_WriteIntoRegister(&(DMA1->CCR4), 1, 1, 0);

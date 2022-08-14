@@ -68,5 +68,11 @@ void Uart_ToggleUart(int uartNumber, bool active);
  */
 void Uart_ToggleTransmitter(int uartNumber, bool active);
 
+/**
+ * @brief Sets up everything to use Usart
+ * 
+ * @param uartNumber 1-5
+ */
+void Uart_SetupU_S_ART(int uartNumber);
 
 #endif /* UART_H */

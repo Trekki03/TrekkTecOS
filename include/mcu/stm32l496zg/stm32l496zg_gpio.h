@@ -234,6 +234,25 @@ typedef enum
 
 } gpio_pullup_pulldown_t;
 
+typedef enum
+{
+    GPIO_ALTERNATE_FUNCTION_0 = 0b0000,     ///< alternate function 0
+    GPIO_ALTERNATE_FUNCTION_1 = 0b0001,     ///< alternate function 1
+    GPIO_ALTERNATE_FUNCTION_2 = 0b0010,     ///< alternate function 2
+    GPIO_ALTERNATE_FUNCTION_3 = 0b0011,     ///< alternate function 3
+    GPIO_ALTERNATE_FUNCTION_4 = 0b0100,     ///< alternate function 4
+    GPIO_ALTERNATE_FUNCTION_5 = 0b0101,     ///< alternate function 5
+    GPIO_ALTERNATE_FUNCTION_6 = 0b0110,     ///< alternate function 6
+    GPIO_ALTERNATE_FUNCTION_7 = 0b0111,     ///< alternate function 7
+    GPIO_ALTERNATE_FUNCTION_8 = 0b1000,     ///< alternate function 8
+    GPIO_ALTERNATE_FUNCTION_9 = 0b1001,     ///< alternate function 9
+    GPIO_ALTERNATE_FUNCTION_10 = 0b1010,    ///< alternate function 10
+    GPIO_ALTERNATE_FUNCTION_11 = 0b1011,    ///< alternate function 11
+    GPIO_ALTERNATE_FUNCTION_12 = 0b1100,    ///< alternate function 12
+    GPIO_ALTERNATE_FUNCTION_13 = 0b1101,    ///< alternate function 13
+    GPIO_ALTERNATE_FUNCTION_14 = 0b1110,    ///< alternate function 14
+    GPIO_ALTERNATE_FUNCTION_15 = 0b1111     ///< alternate function 15
+} gpio_pin_alternate_function_t;
 
 
 /******************* Values for functions *******************/
@@ -243,6 +262,10 @@ typedef enum
 #define SET_PULLUP_PULLDOWN_REGISTER_ADDR &(pin->port->PUPDR)
 #define TOGGLE_PIN_OUTPUT_REGISTER_ADDR &(pin->port->ODR)
 #define READ_PIN_INPUT_REGISTER_ADDR &(pin->port->IDR)
+
+//Set alternate function 
+#define GPIO_SET_ALTERNATE_FUNCTION_INITIAL_OFFSET 0
+#define GPIO_SET_ALTERNATE_FUNCTION_VALUE_LENGTH 4
 
 #endif /* STM32L496ZG_GPIO_H */
 

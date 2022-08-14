@@ -27,6 +27,14 @@
 void Gpio_SetPinMode(gpio_pin_struct_t* pin, gpio_pin_mode_t mode);
 
 /**
+ * @brief selects the alterante function of a pin
+ * 
+ * @param pin selects the pin of which the alternate function should be selected
+ * @param alternateFunction selects which alternate function should be applied
+ */
+void Gpio_SetAlternateFunction(gpio_pin_struct_t* pin, gpio_pin_alternate_function_t alternateFunction);
+
+/**
  * @brief sets the speed of an selected GPIO pin
  * 
  * @param port the pin port (for example GPIOA or GPIOB)

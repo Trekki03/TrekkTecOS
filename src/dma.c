@@ -1,5 +1,7 @@
 #include "dma.h"
 #include "register.h"
+#include "rcc.h"
+#include "bool.h"
 
 //Helper Functions
 uint32_t* Local_GetCcrRegister(uint32_t dmaNumber, uint32_t dmaChannelNumber)
@@ -113,4 +115,32 @@ void Dma_SetMemoryAddress(uint32_t dmaNumber, uint32_t dmaChannelNumber, volatil
 {
     uint32_t* registerAddr = Local_GetCmarRegister(dmaNumber, dmaChannelNumber);
     Register_WriteIntoRegister(registerAddr, (uint32_t) memoryAddress, 32, 0);
+}
+
+void Dma_SetupDMAForU_s_art(uint32_t usartNumber)
+{
+    //Sending
+    uint32_t dmaNumber = uart_send_dma_channel_requestcode_map[usartNumber-1][0];
+    uint32_t dmaChannelNumber = uart_send_dma_channel_requestcode_map[usartNumber-1][1];
+    uint32_t dmaRequestCode = uart_send_dma_channel_requestcode_map[usartNumber-1][2];
+
+    //Enable DMA Clock
+    uint32_t dmaClockBit = dmaNumber == 1 ? DMA_1_ENABLE_BIT : DMA_2_ENABLE_BIT;
+    Rcc_ToggleDmaClock(dmaClockBit, on);
+
+    Dma_ToggleTransferCompleteInterrupt(dmaNumber, dmaChannelNumber, on); //Enable Transfer Complete Interrupt
+    Dma_SetTransferDirection(dmaNumber, dmaChannelNumber, DIRECTION_READ_FROM_MEMORY);   //Direction Memory to Data
+    Dma_ToggleCircularMode(dmaNumber, dmaChannelNumber, off); // No circular Mode
+    Dma_TogglePeripheralIncrement(dmaNumber, dmaChannelNumber, off);   //No peripheral increment
+    Dma_ToggleMemoryIncrement(dmaNumber, dmaChannelNumber, on); //Memory increment
+    Dma_SetPeripheralSize(dmaNumber, dmaChannelNumber, PERIPHERAL_SIZE_8_BIT); //peripheral size 8bit
+    Dma_SetChannelPriority(dmaNumber, dmaChannelNumber,CHANNEL_PRIORITY_MEDIUM); //medium priority
+    Dma_ToggleMemToMemMode(dmaNumber, dmaChannelNumber,false); // No MemToMem
+
+    // Set Dma request code
+    dma_struct_t* dmaBaseRegister = dmaNumber == 1 ? DMA1 : DMA2;
+    Dma_SetDmaChannelRequest(dmaBaseRegister,dmaChannelNumber,dmaRequestCode);
+
+    Dma_SetPeripheralAddress(dmaNumber, dmaChannelNumber, uart_send_data_register_addr_map[usartNumber-1]);
+    Dma_SetMemoryAddress(dmaNumber, dmaChannelNumber, uart_send_buffer_addr_map[usartNumber-1]);
 }

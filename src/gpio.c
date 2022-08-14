@@ -37,3 +37,15 @@ bool Gpio_ReadPinInput(gpio_pin_struct_t* const pin)
                     READ_PIN_INPUT_REGISTER_ADDR, 1uL, pin->pinNumber) 
                 );
 }
+
+void Gpio_SetAlternateFunction(gpio_pin_struct_t* pin, gpio_pin_alternate_function_t alternateFunction)
+{
+    //AFRH for pins 8 to 15 and AFRL for pins 0 to 7
+    volatile uint32_t* AfRegister = pin->pinNumber > 7 ? &(pin->port->AFRH) : &(pin->port->AFRL); 
+
+    //if in AFRH Register, pin 8 is pin 0 and so on
+    uint32_t pinNumberInRegister = pin->pinNumber > 7 ? pin->pinNumber - 8 : pin->pinNumber;
+    uint32_t offset = GPIO_SET_ALTERNATE_FUNCTION_INITIAL_OFFSET + (pinNumberInRegister * GPIO_SET_ALTERNATE_FUNCTION_VALUE_LENGTH);
+
+    Register_WriteIntoRegister(AfRegister, alternateFunction, GPIO_SET_ALTERNATE_FUNCTION_VALUE_LENGTH, offset);
+}
