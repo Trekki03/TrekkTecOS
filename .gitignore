@@ -7,3 +7,4 @@ WaveformsWin.dwf3work
 /.idea/*
 .DS_Store
 /Doc
+/.cache/*
